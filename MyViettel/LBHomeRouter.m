@@ -10,4 +10,9 @@
 
 @implementation LBHomeRouter
 
+-(void)showHomeViewController {
+    
+    [self.rootViewController setViewControllersIntoNavController:@[_homeViewController] animated:YES];
+}
+
 @end

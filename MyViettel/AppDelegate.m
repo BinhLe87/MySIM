@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 
 @interface AppDelegate ()
@@ -29,7 +30,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self.myViettelDependencies.slideMenuRouter showSlideMenuViewController];
+    [self.myViettelDependencies.homeRouter showHomeViewController];
+    
+    //Core data
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"LBMyViettelDataModel"];
+    
     
     return YES;
 }

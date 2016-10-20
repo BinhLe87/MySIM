@@ -12,6 +12,8 @@
 #ifdef __OBJC__
 #import "LBMyViettelConstants.h"
 
+#define MR_SHORTHAND
+
 
 #endif
 

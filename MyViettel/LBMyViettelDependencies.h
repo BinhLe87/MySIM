@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "LBSlideMenuRouter.h"
+#import "LBHomeRouter.h"
 
 @interface LBMyViettelDependencies : NSObject
 
 @property(nonatomic) LBSlideMenuRouter *slideMenuRouter;
+@property(nonatomic) LBHomeRouter *homeRouter;
 
 @end

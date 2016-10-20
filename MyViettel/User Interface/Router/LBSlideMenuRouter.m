@@ -13,14 +13,6 @@
 @implementation LBSlideMenuRouter
 
 #pragma mark - Initializers
--(LBMyViettelRootViewController *)rootViewController {
-    
-    if (_rootViewController) return _rootViewController;
-    
-    _rootViewController = [[LBMyViettelRootViewController alloc] init];
-    
-    return _rootViewController;
-}
 
 
 -(void)showSlideMenuViewController {

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LBHomeViewController.h"
+#import "LBMyViettelRootViewController.h"
 
 @interface LBHomeRouter : NSObject
+
+@property(nonatomic)LBHomeViewController *homeViewController;
+@property(nonatomic)LBMyViettelRootViewController *rootViewController;
+
+-(void)showHomeViewController;
 
 @end

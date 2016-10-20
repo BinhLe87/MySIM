@@ -459,7 +459,82 @@
 		AB581B2B1DB76C7100D546C0 /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AB581B0F1DB76C7100D546C0 /* menu-button.png */; };
 		AB581B2C1DB76C7100D546C0 /* menu-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB581B101DB76C7100D546C0 /* menu-button@2x.png */; };
 		AB581B2D1DB76C7100D546C0 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB581B121DB76C7100D546C0 /* SlideNavigationController.m */; };
+		AB5967EC1DB8A9F900191AB6 /* LBHomePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967EB1DB8A9F900191AB6 /* LBHomePresenter.m */; };
+		AB5967EF1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB5967ED1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld */; };
+		AB5968031DB8AF9500191AB6 /* LBService+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967F41DB8AF9500191AB6 /* LBService+CoreDataProperties.m */; };
+		AB5968041DB8AF9500191AB6 /* LBService.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967F61DB8AF9500191AB6 /* LBService.m */; };
+		AB5968051DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967F81DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m */; };
+		AB5968061DB8AF9500191AB6 /* LBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967FA1DB8AF9500191AB6 /* LBAccount.m */; };
+		AB5968071DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967FC1DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m */; };
+		AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967FE1DB8AF9500191AB6 /* LBCustomer.m */; };
+		AB5968091DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5968001DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m */; };
+		AB59680A1DB8AF9500191AB6 /* LBServiceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */; };
+		AB5968681DB8B16400191AB6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5968671DB8B16400191AB6 /* CoreData.framework */; };
+		AB5968861DB8B55700191AB6 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB59687F1DB8B52A00191AB6 /* libMagicalRecord.a */; };
+		ABE2852B1DB776D9007A412F /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852A1DB776D9007A412F /* LBHomeViewController.m */; };
+		ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852D1DB7783C007A412F /* LBHomeHeaderView.m */; };
+		ABE285301DB77850007A412F /* LBHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */; };
+		ABE285331DB78309007A412F /* LBHomeRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE285321DB78309007A412F /* LBHomeRouter.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB5968761DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 905D07181A63DE190076B54E;
+			remoteInfo = "MagicalRecord for iOS";
+		};
+		AB5968781DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9004F5211A94CBCF00A61312;
+			remoteInfo = "MagicalRecord for iOS Tests";
+		};
+		AB59687A1DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 905D073B1A63DE690076B54E;
+			remoteInfo = "MagicalRecord for OS X";
+		};
+		AB59687C1DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9004F5661A94CBF900A61312;
+			remoteInfo = "MagicalRecord for OS X Tests";
+		};
+		AB59687E1DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF97AB17498414008D9D13;
+			remoteInfo = "libMagicalRecord for iOS";
+		};
+		AB5968801DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF97FF174984CA008D9D13;
+			remoteInfo = "libMagicalRecord for iOS Tests";
+		};
+		AB5968821DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF97BB1749843F008D9D13;
+			remoteInfo = "libMagicalRecord for OS X";
+		};
+		AB5968841DB8B52A00191AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF9816174984E4008D9D13;
+			remoteInfo = "libMagicalRecord for OS X Tests";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB2E79491DB602E40035520E /* MyViettel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyViettel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -974,6 +1049,34 @@
 		AB581B101DB76C7100D546C0 /* menu-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button@2x.png"; sourceTree = "<group>"; };
 		AB581B111DB76C7100D546C0 /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationController.h; sourceTree = "<group>"; };
 		AB581B121DB76C7100D546C0 /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationController.m; sourceTree = "<group>"; };
+		AB5967EA1DB8A9F900191AB6 /* LBHomePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomePresenter.h; sourceTree = "<group>"; };
+		AB5967EB1DB8A9F900191AB6 /* LBHomePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomePresenter.m; sourceTree = "<group>"; };
+		AB5967EE1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LBMyViettelDataModel.xcdatamodel; sourceTree = "<group>"; };
+		AB5967F31DB8AF9500191AB6 /* LBService+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LBService+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AB5967F41DB8AF9500191AB6 /* LBService+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LBService+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AB5967F51DB8AF9500191AB6 /* LBService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBService.h; sourceTree = "<group>"; };
+		AB5967F61DB8AF9500191AB6 /* LBService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBService.m; sourceTree = "<group>"; };
+		AB5967F71DB8AF9500191AB6 /* LBAccount+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LBAccount+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AB5967F81DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LBAccount+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AB5967F91DB8AF9500191AB6 /* LBAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccount.h; sourceTree = "<group>"; };
+		AB5967FA1DB8AF9500191AB6 /* LBAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccount.m; sourceTree = "<group>"; };
+		AB5967FB1DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LBCustomer+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AB5967FC1DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LBCustomer+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AB5967FD1DB8AF9500191AB6 /* LBCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCustomer.h; sourceTree = "<group>"; };
+		AB5967FE1DB8AF9500191AB6 /* LBCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCustomer.m; sourceTree = "<group>"; };
+		AB5967FF1DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LBServiceDetails+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AB5968001DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LBServiceDetails+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AB5968011DB8AF9500191AB6 /* LBServiceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBServiceDetails.h; sourceTree = "<group>"; };
+		AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBServiceDetails.m; sourceTree = "<group>"; };
+		AB5968671DB8B16400191AB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = MyViettel/MagicalRecord/MagicalRecord.xcodeproj; sourceTree = "<group>"; };
+		ABE285291DB776D9007A412F /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
+		ABE2852A1DB776D9007A412F /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
+		ABE2852C1DB7783C007A412F /* LBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeaderView.h; sourceTree = "<group>"; };
+		ABE2852D1DB7783C007A412F /* LBHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeHeaderView.m; sourceTree = "<group>"; };
+		ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBHomeHeaderView.xib; sourceTree = "<group>"; };
+		ABE285311DB78309007A412F /* LBHomeRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeRouter.h; sourceTree = "<group>"; };
+		ABE285321DB78309007A412F /* LBHomeRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeRouter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -981,6 +1084,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5968861DB8B55700191AB6 /* libMagicalRecord.a in Frameworks */,
+				AB5968681DB8B16400191AB6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +1095,8 @@
 		AB2E79401DB602E40035520E = {
 			isa = PBXGroup;
 			children = (
+				AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */,
+				AB5968671DB8B16400191AB6 /* CoreData.framework */,
 				AB2E794B1DB602E40035520E /* MyViettel */,
 				AB2E794A1DB602E40035520E /* Products */,
 			);
@@ -1027,6 +1134,11 @@
 		AB2E79631DB6030C0035520E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABE285291DB776D9007A412F /* LBHomeViewController.h */,
+				ABE2852A1DB776D9007A412F /* LBHomeViewController.m */,
+				ABE2852C1DB7783C007A412F /* LBHomeHeaderView.h */,
+				ABE2852D1DB7783C007A412F /* LBHomeHeaderView.m */,
+				ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1060,6 +1172,8 @@
 		AB2E79671DB6033A0035520E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				AB5967EA1DB8A9F900191AB6 /* LBHomePresenter.h */,
+				AB5967EB1DB8A9F900191AB6 /* LBHomePresenter.m */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -1074,6 +1188,8 @@
 		AB2E79691DB603450035520E /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				ABE285311DB78309007A412F /* LBHomeRouter.h */,
+				ABE285321DB78309007A412F /* LBHomeRouter.m */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -1190,6 +1306,8 @@
 		AB2E79761DB604780035520E /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				AB5967F21DB8AEE700191AB6 /* Entities */,
+				AB5967ED1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -1809,6 +1927,44 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		AB5967F21DB8AEE700191AB6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AB5967F31DB8AF9500191AB6 /* LBService+CoreDataProperties.h */,
+				AB5967F41DB8AF9500191AB6 /* LBService+CoreDataProperties.m */,
+				AB5967F51DB8AF9500191AB6 /* LBService.h */,
+				AB5967F61DB8AF9500191AB6 /* LBService.m */,
+				AB5967F71DB8AF9500191AB6 /* LBAccount+CoreDataProperties.h */,
+				AB5967F81DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m */,
+				AB5967F91DB8AF9500191AB6 /* LBAccount.h */,
+				AB5967FA1DB8AF9500191AB6 /* LBAccount.m */,
+				AB5967FB1DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.h */,
+				AB5967FC1DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m */,
+				AB5967FD1DB8AF9500191AB6 /* LBCustomer.h */,
+				AB5967FE1DB8AF9500191AB6 /* LBCustomer.m */,
+				AB5967FF1DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.h */,
+				AB5968001DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m */,
+				AB5968011DB8AF9500191AB6 /* LBServiceDetails.h */,
+				AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		AB59686B1DB8B52A00191AB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB5968771DB8B52A00191AB6 /* MagicalRecord.framework */,
+				AB5968791DB8B52A00191AB6 /* MagicalRecord for iOS Tests.xctest */,
+				AB59687B1DB8B52A00191AB6 /* MagicalRecord.framework */,
+				AB59687D1DB8B52A00191AB6 /* MagicalRecord for OS X Tests.xctest */,
+				AB59687F1DB8B52A00191AB6 /* libMagicalRecord.a */,
+				AB5968811DB8B52A00191AB6 /* libMagicalRecord for iOS Tests.xctest */,
+				AB5968831DB8B52A00191AB6 /* libMagicalRecord.dylib */,
+				AB5968851DB8B52A00191AB6 /* libMagicalRecord for OS X Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1854,12 +2010,77 @@
 			mainGroup = AB2E79401DB602E40035520E;
 			productRefGroup = AB2E794A1DB602E40035520E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AB59686B1DB8B52A00191AB6 /* Products */;
+					ProjectRef = AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AB2E79481DB602E40035520E /* MyViettel */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AB5968771DB8B52A00191AB6 /* MagicalRecord.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MagicalRecord.framework;
+			remoteRef = AB5968761DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB5968791DB8B52A00191AB6 /* MagicalRecord for iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MagicalRecord for iOS Tests.xctest";
+			remoteRef = AB5968781DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB59687B1DB8B52A00191AB6 /* MagicalRecord.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MagicalRecord.framework;
+			remoteRef = AB59687A1DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB59687D1DB8B52A00191AB6 /* MagicalRecord for OS X Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MagicalRecord for OS X Tests.xctest";
+			remoteRef = AB59687C1DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB59687F1DB8B52A00191AB6 /* libMagicalRecord.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMagicalRecord.a;
+			remoteRef = AB59687E1DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB5968811DB8B52A00191AB6 /* libMagicalRecord for iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "libMagicalRecord for iOS Tests.xctest";
+			remoteRef = AB5968801DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB5968831DB8B52A00191AB6 /* libMagicalRecord.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libMagicalRecord.dylib;
+			remoteRef = AB5968821DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AB5968851DB8B52A00191AB6 /* libMagicalRecord for OS X Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "libMagicalRecord for OS X Tests.xctest";
+			remoteRef = AB5968841DB8B52A00191AB6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AB2E79471DB602E40035520E /* Resources */ = {
@@ -2246,6 +2467,7 @@
 				AB2E7BDD1DB61F770035520E /* folder-7.png in Resources */,
 				AB2E7BEB1DB61F770035520E /* forbidden.png in Resources */,
 				AB2E7C821DB61F770035520E /* share.png in Resources */,
+				ABE285301DB77850007A412F /* LBHomeHeaderView.xib in Resources */,
 				AB2E7C8C1DB61F770035520E /* smartphone-4.png in Resources */,
 				AB2E7BAC1DB61F770035520E /* controls-7.png in Resources */,
 				AB2E7C0D1DB61F770035520E /* like.png in Resources */,
@@ -2279,9 +2501,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB59680A1DB8AF9500191AB6 /* LBServiceDetails.m in Sources */,
 				AB581B2D1DB76C7100D546C0 /* SlideNavigationController.m in Sources */,
 				AB581ACE1DB756FA00D546C0 /* SDWebImageDecoder.m in Sources */,
+				AB5968091DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m in Sources */,
 				AB2E79DE1DB618B30035520E /* MASConstraintMaker.m in Sources */,
+				AB5968061DB8AF9500191AB6 /* LBAccount.m in Sources */,
+				ABE2852B1DB776D9007A412F /* LBHomeViewController.m in Sources */,
+				AB5968031DB8AF9500191AB6 /* LBService+CoreDataProperties.m in Sources */,
+				AB5968041DB8AF9500191AB6 /* LBService.m in Sources */,
 				AB581ACA1DB756FA00D546C0 /* MKAnnotationView+WebCache.m in Sources */,
 				AB2E79871DB60E660035520E /* LBSlideMenuViewController.m in Sources */,
 				AB581B1E1DB76C7100D546C0 /* ProfileViewController.m in Sources */,
@@ -2295,17 +2523,22 @@
 				AB581ACC1DB756FA00D546C0 /* SDImageCache.m in Sources */,
 				AB581AD51DB756FA00D546C0 /* UIImage+MultiFormat.m in Sources */,
 				AB581AD41DB756FA00D546C0 /* UIImage+GIF.m in Sources */,
+				ABE285331DB78309007A412F /* LBHomeRouter.m in Sources */,
 				AB581ACF1DB756FA00D546C0 /* SDWebImageDownloader.m in Sources */,
+				AB5967EF1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld in Sources */,
 				AB581AA71DB72F9200D546C0 /* LBSlideMenuChooseBackgroundTableViewCell.m in Sources */,
 				AB581AD81DB756FA00D546C0 /* UIImageView+WebCache.m in Sources */,
+				AB5968051DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m in Sources */,
 				AB581AD31DB756FA00D546C0 /* UIButton+WebCache.m in Sources */,
 				AB581B1C1DB76C7100D546C0 /* LeftMenuViewController.m in Sources */,
+				AB5968071DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m in Sources */,
 				AB2E79E21DB618B30035520E /* NSArray+MASAdditions.m in Sources */,
 				AB581AA41DB723FC00D546C0 /* LBSlideMenuChooseBackgroundTableViewController.m in Sources */,
 				AB581B1F1DB76C7100D546C0 /* RightMenuViewController.m in Sources */,
 				AB2E79E11DB618B30035520E /* MASViewConstraint.m in Sources */,
 				AB2E7CE51DB61FC50035520E /* LBSlideMenuPresenter.m in Sources */,
 				AB2E7CF11DB62E2C0035520E /* LBSlideMenuRouter.m in Sources */,
+				AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */,
 				AB581B2A1DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				AB581B1B1DB76C7100D546C0 /* HomeViewController.m in Sources */,
 				AB2E79E01DB618B30035520E /* MASViewAttribute.m in Sources */,
@@ -2318,8 +2551,10 @@
 				AB581AD11DB756FA00D546C0 /* SDWebImageManager.m in Sources */,
 				AB581B281DB76C7100D546C0 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				AB581ACB1DB756FA00D546C0 /* NSData+ImageContentType.m in Sources */,
+				ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */,
 				AB2E794E1DB602E40035520E /* main.m in Sources */,
 				AB2E798B1DB611490035520E /* LBSideMenuTableViewCell.m in Sources */,
+				AB5967EC1DB8A9F900191AB6 /* LBHomePresenter.m in Sources */,
 				AB581B291DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				AB2E7CEE1DB62C4C0035520E /* LBMyViettelDependencies.m in Sources */,
 				AB2E79DC1DB618B30035520E /* MASCompositeConstraint.m in Sources */,
@@ -2439,7 +2674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/${PROJECT_NAME}/LBMyViettel-PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "{$SRCROOT}/MyViettel/**";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/${PROJECT_NAME}/**";
 				INFOPLIST_FILE = MyViettel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -2454,7 +2689,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/${PROJECT_NAME}/LBMyViettel-PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "{$SRCROOT}/MyViettel/**";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/${PROJECT_NAME}/**";
 				INFOPLIST_FILE = MyViettel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
@@ -2485,6 +2720,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB5967ED1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB5967EE1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodel */,
+			);
+			currentVersion = AB5967EE1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodel */;
+			path = LBMyViettelDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AB2E79411DB602E40035520E /* Project object */;
 }
