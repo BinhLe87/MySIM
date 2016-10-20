@@ -13,9 +13,11 @@
 
 @implementation LBAccount (CoreDataProperties)
 
-@dynamic name;
 @dynamic amount;
 @dynamic expired_date;
+@dynamic name;
+@dynamic unit;
+@dynamic account_type;
 @dynamic customer;
 
 @end

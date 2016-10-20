@@ -9,6 +9,9 @@
 #import "LBHomeViewController.h"
 #import "LBHomeHeaderView.h"
 #import "Masonry.h"
+#import "LBCustomer.h"
+#import "LBAccount.h"
+#import "UIImageView+WebCache.h"
 
 @interface LBHomeViewController ()
 
@@ -38,20 +41,11 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableview]|" options:0 metrics:metrics views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableview]|" options:0 metrics:metrics views:views]];
     
-    //register class for tableCell
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"LBHomeTableViewCell"];
-    
-    return _tableView;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    //add headerView
     LBHomeHeaderView *headerView = [LBHomeHeaderView header];
     self.tableView.tableHeaderView = headerView;
-    
     [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.height.equalTo([NSNumber numberWithFloat:[LBHomeHeaderView heightForHeaderView]]);
         make.top.equalTo(self.tableView.mas_top);
         make.left.equalTo(self.tableView.mas_left);
@@ -72,6 +66,45 @@
             }];
         }
     }];
+    
+    //register class for tableCell
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"LBHomeTableViewCell"];
+    
+    return _tableView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self fillDataGUI];
+}
+
+-(void)fillDataGUI {
+    
+    LBCustomer *customerEntity = [self.presenterDelegate getCustomerInfo];
+    LBHomeHeaderView *headerView = (LBHomeHeaderView*)self.tableView.tableHeaderView;
+    
+    [headerView.cusNameLbl setText:customerEntity.name];
+    [headerView.CusInfoLbl setText:[NSString stringWithFormat:@"%@ | %@", customerEntity.phone, customerEntity.package_name]];
+    [headerView.cusAvatarImageView sd_setImageWithURL:[NSURL URLWithString:customerEntity.avatar_link] placeholderImage:[UIImage imageNamed:LB_DEFAULT_AVATAR]];
+    [headerView.backgroundImageView setImage:[[SDImageCache sharedImageCache] imageFromDiskCacheForKey:LB_CUSTOMER_AVATAR_KEY]];
+    
+    for (LBAccount *account in customerEntity.accounts) {
+        
+        if ([account.name isEqualToString:@"TK GỐC"]) {
+            
+            [headerView.BasicAccountNameLbl setText:@"TK GỐC"];
+            [headerView.BasicAccountValueLbl setText:[NSString stringWithFormat:@"%@ %@", account.amount, account.unit]];
+        } else if ([account.name isEqualToString:@"TK K.MÃI"]) {
+            
+            [headerView.PromAccountNameLbl setText:@"TK K.MÃI"];
+            [headerView.PromAccountValueLbl setText:[NSString stringWithFormat:@"%@ %@", account.amount, account.unit]];
+        } else if ([account.name isEqualToString:@"TK DATA"]) {
+            
+            [headerView.DataAccountNameLbl setText:@"TK DATA"];
+            [headerView.DataAccountValueLbl setText:[NSString stringWithFormat:@"%@ %@", account.amount, account.unit]];
+        }
+    }
     
 }
 
@@ -102,5 +135,14 @@
     return cell;
 }
 
+#pragma mark - Screen
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    
+    [self.tableView.tableHeaderView setNeedsUpdateConstraints];
+    [self.tableView.tableHeaderView updateConstraintsIfNeeded];
+    
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
 
 @end

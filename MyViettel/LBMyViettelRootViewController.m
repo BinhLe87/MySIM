@@ -16,9 +16,21 @@
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    /*CGRect windowFrame = _window.frame;
+    windowFrame.origin = CGPointMake(0, [self statusBarHeight]);
+    windowFrame.size = CGSizeMake(windowFrame.size.width, windowFrame.size.height - [self statusBarHeight]);
+    
+    _window.frame = windowFrame;*/
+    
     [_window makeKeyAndVisible];
     
     return _window;
+}
+
+-(float) statusBarHeight
+{
+    CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
+    return MIN(statusBarSize.width, statusBarSize.height);
 }
 
 -(UINavigationController *)navigationController {

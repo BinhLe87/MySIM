@@ -16,6 +16,8 @@
 @dynamic name;
 @dynamic phone;
 @dynamic package_name;
+@dynamic avatar_link;
+@dynamic background_link;
 @dynamic accounts;
 @dynamic services;
 

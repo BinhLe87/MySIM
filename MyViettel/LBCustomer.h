@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LBCustomer : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
+-(LBCustomer*)getCustomerByPhone:(NSString*)phone;
+
 
 @end
 

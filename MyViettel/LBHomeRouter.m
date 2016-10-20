@@ -12,6 +12,7 @@
 
 -(void)showHomeViewController {
     
+    [self.rootViewController.navigationController setNavigationBarHidden:YES];
     [self.rootViewController setViewControllersIntoNavController:@[_homeViewController] animated:YES];
 }
 

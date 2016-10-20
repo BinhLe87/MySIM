@@ -15,6 +15,7 @@
 //HomeView
 #import "LBHomeRouter.h"
 #import "LBHomeViewController.h"
+#import "LBHomePresenter.h"
 
 
 
@@ -48,8 +49,10 @@
     
     //TODO: HomeView - add dependencies
     LBHomeViewController *homeViewController = [[LBHomeViewController alloc] init];
+    LBHomePresenter *homePresenter = [[LBHomePresenter alloc] init];
     _homeRouter = [[LBHomeRouter alloc] init];
     
+    homeViewController.presenterDelegate = homePresenter;
     _homeRouter.homeViewController = homeViewController;
     _homeRouter.rootViewController = rootViewController;
 }

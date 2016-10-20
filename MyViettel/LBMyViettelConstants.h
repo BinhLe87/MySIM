@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 #define LB_CUSTOMER_AVATAR_KEY @"customer_avatar_key"
+#define LB_DEFAULT_AVATAR @"3gviettel.jpeg"

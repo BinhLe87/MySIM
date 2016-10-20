@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *phone;
 @property (nullable, nonatomic, retain) NSString *package_name;
+@property (nullable, nonatomic, retain) NSString *avatar_link;
+@property (nullable, nonatomic, retain) NSString *background_link;
 @property (nullable, nonatomic, retain) NSSet<LBAccount *> *accounts;
 @property (nullable, nonatomic, retain) NSSet<LBService *> *services;
 

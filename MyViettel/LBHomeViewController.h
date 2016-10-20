@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBHomeInterface.h"
 
 @interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic) UITableView *tableView;
+@property(nonatomic) id<LBHomePresenterDelegate> presenterDelegate;
 
 @end

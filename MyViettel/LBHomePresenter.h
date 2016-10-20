@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LBHomeInterface.h"
 
-@interface LBHomePresenter : NSObject
+
+@interface LBHomePresenter : NSObject <LBHomePresenterDelegate>
+
+@property(nonatomic) NSString* cus_phone;
 
 @end

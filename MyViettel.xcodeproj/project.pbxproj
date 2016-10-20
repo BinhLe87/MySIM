@@ -1070,6 +1070,7 @@
 		AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBServiceDetails.m; sourceTree = "<group>"; };
 		AB5968671DB8B16400191AB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AB59686A1DB8B52A00191AB6 /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = MyViettel/MagicalRecord/MagicalRecord.xcodeproj; sourceTree = "<group>"; };
+		AB5968891DB8B9C400191AB6 /* LBHomeInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeInterface.h; sourceTree = "<group>"; };
 		ABE285291DB776D9007A412F /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
 		ABE2852A1DB776D9007A412F /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
 		ABE2852C1DB7783C007A412F /* LBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeaderView.h; sourceTree = "<group>"; };
@@ -1207,6 +1208,7 @@
 		AB2E796B1DB603B40035520E /* Module Interface */ = {
 			isa = PBXGroup;
 			children = (
+				AB5968891DB8B9C400191AB6 /* LBHomeInterface.h */,
 			);
 			name = "Module Interface";
 			sourceTree = "<group>";

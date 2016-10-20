@@ -21,12 +21,25 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *CusInfoLbl;
 
-@property (weak, nonatomic) IBOutlet UILabel *BasicAccountLbl;
+@property (weak, nonatomic) IBOutlet UILabel *BasicAccountNameLbl;
 
-@property (weak, nonatomic) IBOutlet UILabel *PromAccountLbl;
+@property (weak, nonatomic) IBOutlet UILabel *BasicAccountValueLbl;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *DataAccountLbl;
+@property (weak, nonatomic) IBOutlet UILabel *PromAccountNameLbl;
+
+@property (weak, nonatomic) IBOutlet UILabel *PromAccountValueLbl;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *DataAccountNameLbl;
+
+@property (weak, nonatomic) IBOutlet UILabel *DataAccountValueLbl;
+
+
+@property (weak, nonatomic) IBOutlet UIView *verticalLineLeft;
+
+@property (weak, nonatomic) IBOutlet UIView *verticalLineRight;
+
 
 +(instancetype)header;
 +(CGFloat)heightForHeaderView;

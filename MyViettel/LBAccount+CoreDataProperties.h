@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LBAccount (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSNumber *amount;
 @property (nullable, nonatomic, retain) NSDate *expired_date;
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *unit;
+@property (nullable, nonatomic, retain) NSString *account_type;
 @property (nullable, nonatomic, retain) LBCustomer *customer;
 
 @end
