@@ -40,6 +40,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *verticalLineRight;
 
+@property (nonatomic) BOOL didUpdateConstraints;
+
 
 +(instancetype)header;
 +(CGFloat)heightForHeaderView;

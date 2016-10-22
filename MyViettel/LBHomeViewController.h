@@ -9,6 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "LBHomeInterface.h"
 
+typedef NS_ENUM(NSUInteger, HomeTableSectionType) {
+    
+    HomeTableSectionTypeAccount = 0,
+    HomeTableSectionTypeService = 1
+};
+
+extern int const sectionBackgroundColor;
+extern int const marginLeftSection;
+extern int const marginRightSection;
+extern int const spaceBetweenSections;
+extern int const tableViewBackgroundColor;
+
 @interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic) UITableView *tableView;

@@ -42,4 +42,13 @@
    return [self.customerEntity getCustomerByPhone:self.cus_phone];
 }
 
+-(void)getAccountsOfCustomer:(void (^)(NSArray *))completionBlock {
+    
+    [self.customerEntity fetchAccountsByTypeForPhone:self.cus_phone accountType:@"DATA" completionBlock:^(NSArray *results) {
+        
+        completionBlock(results);
+    }];
+}
+    
+
 @end

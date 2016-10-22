@@ -4,6 +4,7 @@
         <attribute name="account_type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="expired_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="intro" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LBCustomer" inverseName="accounts" inverseEntity="LBCustomer" syncable="YES"/>
@@ -41,7 +42,7 @@
         <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LBService" inverseName="service_details" inverseEntity="LBService" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LBAccount" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="LBAccount" positionX="-54" positionY="18" width="128" height="150"/>
         <element name="LBCustomer" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="LBService" positionX="-27" positionY="54" width="128" height="105"/>
         <element name="LBServiceDetails" positionX="-9" positionY="63" width="128" height="120"/>

@@ -21,4 +21,30 @@
     return [LBCustomer MR_findFirstWithPredicate:findByPhone];
 }
 
+-(void)fetchAccountsByTypeForPhone:(NSString *)phone accountType:(NSString *)accountType completionBlock:(void (^)(NSArray * results))completionBlock {
+    
+    NSPredicate *findByPhone = [NSPredicate predicateWithFormat:@"phone = %@", phone];
+    LBCustomer *foundCustomer = [LBCustomer MR_findFirstWithPredicate:findByPhone];
+    
+    NSPredicate *filterByAccountType = [NSPredicate predicateWithFormat:@"customer = %@ AND account_type = %@", foundCustomer, accountType];
+    
+    
+    
+    NSArray *resultsInBkgThread = [LBAccount MR_findAllWithPredicate:filterByAccountType];
+    
+    //return to main thread
+    __block NSArray *resultsInMainThread;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", resultsInBkgThread];
+        
+        resultsInMainThread = [LBAccount MR_findAllWithPredicate:mainPredicate];
+        
+        if(completionBlock) {
+            
+            completionBlock(resultsInMainThread);
+        }
+    });
+}
+
 @end

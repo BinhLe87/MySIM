@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB22C3DE1DBA75A500519A98 /* LBHomeHeaderSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22C3DD1DBA75A500519A98 /* LBHomeHeaderSection.m */; };
+		AB22C3E91DBA75CF00519A98 /* LBHomeFooterSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22C3E81DBA75CF00519A98 /* LBHomeFooterSection.m */; };
 		AB2E794E1DB602E40035520E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E794D1DB602E40035520E /* main.m */; };
 		AB2E79511DB602E40035520E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E79501DB602E40035520E /* AppDelegate.m */; };
 		AB2E79591DB602E40035520E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2E79581DB602E40035520E /* Assets.xcassets */; };
@@ -475,6 +477,8 @@
 		ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852D1DB7783C007A412F /* LBHomeHeaderView.m */; };
 		ABE285301DB77850007A412F /* LBHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */; };
 		ABE285331DB78309007A412F /* LBHomeRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE285321DB78309007A412F /* LBHomeRouter.m */; };
+		ABF667401DBB184500F5353D /* LBHomeTableCellAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6673E1DBB184500F5353D /* LBHomeTableCellAutoLayout.m */; };
+		ABF667411DBB184500F5353D /* LBHomeTableCellAutoLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF6673F1DBB184500F5353D /* LBHomeTableCellAutoLayout.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -537,6 +541,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB22C3DC1DBA75A500519A98 /* LBHomeHeaderSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeaderSection.h; sourceTree = "<group>"; };
+		AB22C3DD1DBA75A500519A98 /* LBHomeHeaderSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeHeaderSection.m; sourceTree = "<group>"; };
+		AB22C3E71DBA75CF00519A98 /* LBHomeFooterSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeFooterSection.h; sourceTree = "<group>"; };
+		AB22C3E81DBA75CF00519A98 /* LBHomeFooterSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeFooterSection.m; sourceTree = "<group>"; };
 		AB2E79491DB602E40035520E /* MyViettel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyViettel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2E794D1DB602E40035520E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB2E794F1DB602E40035520E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1078,6 +1086,9 @@
 		ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBHomeHeaderView.xib; sourceTree = "<group>"; };
 		ABE285311DB78309007A412F /* LBHomeRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeRouter.h; sourceTree = "<group>"; };
 		ABE285321DB78309007A412F /* LBHomeRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeRouter.m; sourceTree = "<group>"; };
+		ABF6673D1DBB184500F5353D /* LBHomeTableCellAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeTableCellAutoLayout.h; sourceTree = "<group>"; };
+		ABF6673E1DBB184500F5353D /* LBHomeTableCellAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeTableCellAutoLayout.m; sourceTree = "<group>"; };
+		ABF6673F1DBB184500F5353D /* LBHomeTableCellAutoLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBHomeTableCellAutoLayout.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1093,6 +1104,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB2CD63B1DB9A74B002FBA27 /* TableSections */ = {
+			isa = PBXGroup;
+			children = (
+				AB2CD6441DB9A771002FBA27 /* Section */,
+			);
+			name = TableSections;
+			sourceTree = "<group>";
+		};
+		AB2CD6441DB9A771002FBA27 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				AB22C3DC1DBA75A500519A98 /* LBHomeHeaderSection.h */,
+				AB22C3DD1DBA75A500519A98 /* LBHomeHeaderSection.m */,
+				AB22C3E71DBA75CF00519A98 /* LBHomeFooterSection.h */,
+				AB22C3E81DBA75CF00519A98 /* LBHomeFooterSection.m */,
+				ABF6673D1DBB184500F5353D /* LBHomeTableCellAutoLayout.h */,
+				ABF6673E1DBB184500F5353D /* LBHomeTableCellAutoLayout.m */,
+				ABF6673F1DBB184500F5353D /* LBHomeTableCellAutoLayout.xib */,
+			);
+			name = Section;
+			sourceTree = "<group>";
+		};
 		AB2E79401DB602E40035520E = {
 			isa = PBXGroup;
 			children = (
@@ -1135,6 +1168,7 @@
 		AB2E79631DB6030C0035520E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB2CD63B1DB9A74B002FBA27 /* TableSections */,
 				ABE285291DB776D9007A412F /* LBHomeViewController.h */,
 				ABE2852A1DB776D9007A412F /* LBHomeViewController.m */,
 				ABE2852C1DB7783C007A412F /* LBHomeHeaderView.h */,
@@ -2304,6 +2338,7 @@
 				AB2E7C6C1DB61F770035520E /* rewind.png in Resources */,
 				AB2E7BBA1DB61F770035520E /* division.png in Resources */,
 				AB2E7C561DB61F770035520E /* pin.png in Resources */,
+				ABF667411DBB184500F5353D /* LBHomeTableCellAutoLayout.xib in Resources */,
 				AB2E7C721DB61F770035520E /* server-1.png in Resources */,
 				AB2E7B771DB61F770035520E /* back.png in Resources */,
 				AB2E7BC81DB61F770035520E /* eyeglasses.png in Resources */,
@@ -2521,6 +2556,7 @@
 				AB2E79DD1DB618B30035520E /* MASConstraint.m in Sources */,
 				AB2E79E51DB618B30035520E /* ViewController+MASAdditions.m in Sources */,
 				AB2E79DF1DB618B30035520E /* MASLayoutConstraint.m in Sources */,
+				AB22C3E91DBA75CF00519A98 /* LBHomeFooterSection.m in Sources */,
 				AB581ACD1DB756FA00D546C0 /* SDWebImageCompat.m in Sources */,
 				AB581ACC1DB756FA00D546C0 /* SDImageCache.m in Sources */,
 				AB581AD51DB756FA00D546C0 /* UIImage+MultiFormat.m in Sources */,
@@ -2536,9 +2572,11 @@
 				AB5968071DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m in Sources */,
 				AB2E79E21DB618B30035520E /* NSArray+MASAdditions.m in Sources */,
 				AB581AA41DB723FC00D546C0 /* LBSlideMenuChooseBackgroundTableViewController.m in Sources */,
+				ABF667401DBB184500F5353D /* LBHomeTableCellAutoLayout.m in Sources */,
 				AB581B1F1DB76C7100D546C0 /* RightMenuViewController.m in Sources */,
 				AB2E79E11DB618B30035520E /* MASViewConstraint.m in Sources */,
 				AB2E7CE51DB61FC50035520E /* LBSlideMenuPresenter.m in Sources */,
+				AB22C3DE1DBA75A500519A98 /* LBHomeHeaderSection.m in Sources */,
 				AB2E7CF11DB62E2C0035520E /* LBSlideMenuRouter.m in Sources */,
 				AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */,
 				AB581B2A1DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,

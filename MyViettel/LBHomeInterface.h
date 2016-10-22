@@ -17,5 +17,6 @@
 @protocol LBHomePresenterDelegate <NSObject>
 
 -(LBCustomer*)getCustomerInfo;
+-(void)getAccountsOfCustomer:(void(^)(NSArray *accounts))completionBlock;
 
 @end

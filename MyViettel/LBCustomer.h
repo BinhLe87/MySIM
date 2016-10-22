@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Insert code here to declare functionality of your managed object subclass
 -(LBCustomer*)getCustomerByPhone:(NSString*)phone;
-
+-(void)fetchAccountsByTypeForPhone:(NSString*)phone accountType:(NSString*)accountType completionBlock:(void(^)(NSArray* results))completionBlock;
 
 @end
 
