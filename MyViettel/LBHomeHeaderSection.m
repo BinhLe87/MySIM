@@ -25,15 +25,15 @@ int const heightForHeaderView = 30;
     
     if (!(self = [super initWithReuseIdentifier:reuseIdentifier])) return nil;
     
-    [self.contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
     headerView = [[UIView alloc] init];
     [self.contentView addSubview:headerView];
+    [headerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [headerView setBackgroundColor:UIColorFromRGB(sectionBackgroundColor)];
     
     headerTitle = [[UILabel alloc] init];
     [headerView addSubview:headerTitle];
     [headerTitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [headerTitle setTextColor:UIColorFromRGB(0xDC6969)];
     
     numServicesLbl = [[UILabel alloc] init];
     [headerView addSubview:numServicesLbl];
@@ -78,28 +78,36 @@ int const heightForHeaderView = 30;
 
 -(void)updateConstraints {
     
+    [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.width.equalTo(self);
+        make.height.equalTo(@(spaceBetweenSections + heightForHeaderView));
+    }];
+    
+    [headerView mas_updateConstraints:^(MASConstraintMaker *make) {
         
-        [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
-            
-            make.edges.equalTo(self);
-        }];
+        make.bottom.equalTo(self.contentView);
+        make.left.equalTo(self.contentView).offset(marginLeftSection);
+        make.right.equalTo(self.contentView).offset(-marginRightSection);
+        make.height.equalTo(@(heightForHeaderView));
+    }];
+    
+    [headerTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
         
-        [headerTitle mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(headerView);
+        make.left.equalTo(headerView.mas_left).offset(10);
+    }];
+    
+    if (self.tableSectionType == HomeTableSectionTypeService) {
+        
+        [numServicesLbl mas_remakeConstraints:^(MASConstraintMaker *make) {
             
             make.centerY.equalTo(headerView);
-            make.left.equalTo(headerView.mas_left).offset(10);
+            make.left.equalTo(headerTitle.mas_right).offset(10);
+            make.width.equalTo(@20);
+            make.height.equalTo(@20);
         }];
-        
-        if (self.tableSectionType == HomeTableSectionTypeService) {
-            
-            [numServicesLbl mas_remakeConstraints:^(MASConstraintMaker *make) {
-                
-                make.centerY.equalTo(headerView);
-                make.left.equalTo(headerTitle.mas_right).offset(10);
-                make.width.equalTo(@20);
-                make.height.equalTo(@20);
-            }];
-        }
+    }
     
     
     [super updateConstraints];
@@ -113,7 +121,7 @@ int const heightForHeaderView = 30;
         numServicesLbl.layer.cornerRadius = numServicesLbl.frame.size.width / 2.0;
     }
     
-    headerView.frame = CGRectMake(marginLeftSection, CGRectGetHeight(self.contentView.frame) - heightForHeaderView, CGRectGetWidth(self.contentView.frame) - marginLeftSection - marginRightSection, heightForHeaderView);
+    /*headerView.frame = CGRectMake(marginLeftSection, CGRectGetHeight(self.contentView.frame) - heightForHeaderView, CGRectGetWidth(self.contentView.frame) - marginLeftSection - marginRightSection, heightForHeaderView);*/
     
     //make corner for headerView
     UIBezierPath *cornerMaskPath = [UIBezierPath bezierPathWithRoundedRect:headerView.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(8, 8)];

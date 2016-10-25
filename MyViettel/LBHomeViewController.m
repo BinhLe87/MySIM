@@ -71,6 +71,7 @@ int const spaceBetweenSections = 20;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     //set style
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [_tableView setShowsVerticalScrollIndicator:NO];
@@ -94,14 +95,15 @@ int const spaceBetweenSections = 20;
     //set self-sizing for cell
     _tableView.rowHeight = UITableViewAutomaticDimension;
     _tableView.estimatedRowHeight = [LBHomeTableCellAutoLayout estimatedCellHeight];
-
+    
+    _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedSectionHeaderHeight = [LBHomeHeaderSection heightForHeaderSection];
+    
+    _tableView.sectionFooterHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedSectionFooterHeight = [LBHomeFooterSection heightForFooterSection];
+    
     //TODO:Fill data into table view
     [self fillDataGUI];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [self.tableView reloadData];
-    });
 }
 
 
@@ -154,8 +156,28 @@ int const spaceBetweenSections = 20;
     self.tableView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     
     self.tableView.tableHeaderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), [LBHomeHeaderView heightForHeaderView]);
+    
+    
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self.tableView reloadData];
+        
+        
+    });
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self.tableView reloadData];
+    });
+}
 
 #pragma mark - TableView
 
@@ -190,10 +212,7 @@ int const spaceBetweenSections = 20;
     return headerView;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    return [LBHomeHeaderSection heightForHeaderSection];
-}
+
 
 
 
@@ -204,10 +223,6 @@ int const spaceBetweenSections = 20;
     return footerView;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    
-    return [LBHomeFooterSection heightForFooterSection];
-}
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -229,38 +244,37 @@ int const spaceBetweenSections = 20;
             
             LBAccount *account = [self.cus_accounts objectAtIndex:indexPath.row];
             [homeCell.rowAvatar setImage:[UIImage imageNamed:@"3gviettel.jpeg"]];
+            
             [homeCell.rowTitle setText:account.name];
+            
             [homeCell.rowContent setText:account.intro];
+            
         } else if (indexPath.section == HomeTableSectionTypeService) {
             
             [homeCell.rowAvatar setImage:[UIImage imageNamed:@"3gviettel.jpeg"]];
+            
             [homeCell.rowTitle setText:@"Test"];
+            
             [homeCell.rowContent setText:@"Test Content"];
         }
     }
 }
 
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [self.tableView reloadData];
-    });
-}
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
-    
-    self.prototypeCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.prototypeCell.bounds));
-    
-    [self.prototypeCell setNeedsLayout];
-    [self.prototypeCell layoutIfNeeded];
-    
-    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    
-    return size.height + 1;
-}
+ 
+ [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
+ 
+ self.prototypeCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.prototypeCell.bounds));
+ 
+ [self.prototypeCell setNeedsLayout];
+ [self.prototypeCell layoutIfNeeded];
+ 
+ CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+ 
+ return size.height;
+ }
 
 
 

@@ -8,15 +8,24 @@
 
 #import "LBHomeFooterSection.h"
 #import "LBHomeViewController.h"
+#import "Masonry.h"
 
-@implementation LBHomeFooterSection
+@implementation LBHomeFooterSection {
+    
+    UIView *footerView;
+}
 
 
 -(instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     
     if (!(self = [super initWithReuseIdentifier:reuseIdentifier])) return nil;
     
-    [self.contentView setBackgroundColor:UIColorFromRGB(sectionBackgroundColor)];
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    footerView = [[UIView alloc] init];
+    [self.contentView addSubview:footerView];
+    
+    [footerView setBackgroundColor:UIColorFromRGB(sectionBackgroundColor)];
     
     return self;
 }
@@ -31,17 +40,34 @@
     return 10.0;
 }
 
+-(void)updateConstraints {
+    
+    [footerView mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.equalTo(self.contentView).offset(marginLeftSection);
+        make.right.equalTo(self.contentView).offset(-marginRightSection);
+        make.top.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.height.equalTo(@10);
+    }];
+    
+    [super updateConstraints];
+}
+
 
 -(void)layoutSubviews {
     
-    self.contentView.frame = CGRectMake(marginLeftSection, 0, CGRectGetWidth(self.frame) - marginLeftSection - marginRightSection, CGRectGetHeight(self.frame));
+    [super layoutSubviews];
     
     //make corner for headerView
-    UIBezierPath *cornerMaskPath = [UIBezierPath bezierPathWithRoundedRect:self.contentView.bounds byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(8, 8)];
+    UIBezierPath *cornerMaskPath = [UIBezierPath bezierPathWithRoundedRect:footerView.bounds byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(8, 8)];
     CAShapeLayer *cornerShapeLayer = [CAShapeLayer layer];
     cornerShapeLayer.path = cornerMaskPath.CGPath;
-    cornerShapeLayer.frame = self.contentView.bounds;
-    self.contentView.layer.mask = cornerShapeLayer;
+    cornerShapeLayer.frame = footerView.bounds;
+    footerView.layer.mask = cornerShapeLayer;
+    
+    
+    
 }
 
 @end
