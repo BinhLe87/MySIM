@@ -15,6 +15,7 @@
 #import "LBHomeTableCellAutoLayout.h"
 #import "LBHomeFooterSection.h"
 #import "LBHomeHeaderSection.h"
+#import "LBCenterBarItemView.h"
 
 
 @interface LBHomeViewController ()
@@ -22,6 +23,7 @@
 @property(nonatomic)LBCustomer *_customerEntity;
 @property(nonatomic)NSMutableArray *cus_accounts;
 @property (nonatomic, strong) LBHomeTableCellAutoLayout *prototypeCell;
+@property(nonatomic)LBCenterBarItemView *_navbarCenterView;
 
 @end
 
@@ -33,6 +35,7 @@ int const spaceBetweenSections = 20;
 
 @implementation LBHomeViewController
 @synthesize _customerEntity = customerEntity;
+@synthesize _navbarCenterView = navbarCenterView;
 
 -(LBHomeTableCellAutoLayout *)prototypeCell {
     
@@ -78,7 +81,6 @@ int const spaceBetweenSections = 20;
     [_tableView setShowsHorizontalScrollIndicator:NO];
     _tableView.backgroundColor = UIColorFromRGB(tableViewBackgroundColor);
     
-    
     //add headerView
     LBHomeHeaderView *headerView = [LBHomeHeaderView header];
     headerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), [LBHomeHeaderView heightForHeaderView]);
@@ -104,26 +106,33 @@ int const spaceBetweenSections = 20;
     
     //TODO:Fill data into table view
     [self fillDataGUI];
+    
+    
+    //TODO: add center navigationBarItem
+    navbarCenterView = [[LBCenterBarItemView alloc] init];
+    navbarCenterView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.navigationItem.titleView = navbarCenterView;
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+    
+    /*[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;*/
 }
 
 
 -(void)fillDataGUI {
     
-    customerEntity = [self.presenterDelegate getCustomerInfo];
-    [self.presenterDelegate getAccountsOfCustomer:^(NSArray *accounts) {
-        
-        for (LBAccount* account in accounts) {
-            
-            [self.cus_accounts addObject:account];
-        }
-    }];
+    [self.presenterDelegate getCustomerInfo];
+    [self.presenterDelegate getAccountsOfCustomer];
     
     LBHomeHeaderView *headerView = (LBHomeHeaderView*)self.tableView.tableHeaderView;
     
     [headerView.cusNameLbl setText:customerEntity.name];
     [headerView.CusInfoLbl setText:[NSString stringWithFormat:@"%@ | %@", customerEntity.phone, customerEntity.package_name]];
     [headerView.cusAvatarImageView sd_setImageWithURL:[NSURL URLWithString:customerEntity.avatar_link] placeholderImage:[UIImage imageNamed:LB_DEFAULT_AVATAR]];
-    [headerView.backgroundImageView setImage:[[SDImageCache sharedImageCache] imageFromDiskCacheForKey:LB_CUSTOMER_AVATAR_KEY]];
+    
+    [headerView.backgroundImageView setImage:customerEntity.getBackgroundImg];
     
     for (LBAccount *account in customerEntity.accounts) {
         
@@ -157,6 +166,24 @@ int const spaceBetweenSections = 20;
     
     self.tableView.tableHeaderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), [LBHomeHeaderView heightForHeaderView]);
     
+    //determine the frame of leftBarButtonItem on navigation bar
+    UIBarButtonItem *leftBarButtonItem = self.navigationItem.leftBarButtonItem;
+    UIView *leftBarButtonItemView = [leftBarButtonItem valueForKey:@"view"];
+    CGFloat leftBarButtonItemwidth;
+    if(leftBarButtonItemView){
+        leftBarButtonItemwidth=[leftBarButtonItemView frame].size.width;
+    }
+    else{
+        leftBarButtonItemwidth=(CGFloat)0.0 ;
+    }
+    
+    
+    navbarCenterView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame) - leftBarButtonItemwidth, CGRectGetHeight(self.navigationController.navigationBar.frame));
+    
+    [navbarCenterView setNeedsUpdateConstraints];
+    [navbarCenterView updateConstraintsIfNeeded];
+    
+
     
 }
 
@@ -166,9 +193,10 @@ int const spaceBetweenSections = 20;
     dispatch_async(dispatch_get_main_queue(), ^{
         
         [self.tableView reloadData];
-        
-        
     });
+    
+    //let table view underlap navigation bar
+    //[_tableView setContentOffset:CGPointMake(0, 0)];
 }
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -200,8 +228,6 @@ int const spaceBetweenSections = 20;
 }
 
 
-
-
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     LBHomeHeaderSection *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:[LBHomeHeaderSection identifier]];
@@ -211,9 +237,6 @@ int const spaceBetweenSections = 20;
     
     return headerView;
 }
-
-
-
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -261,21 +284,40 @@ int const spaceBetweenSections = 20;
 }
 
 
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
- [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
- 
- self.prototypeCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.prototypeCell.bounds));
- 
- [self.prototypeCell setNeedsLayout];
- [self.prototypeCell layoutIfNeeded];
- 
- CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
- 
- return size.height;
- }
+    
+    [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
+    
+    self.prototypeCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.bounds), CGRectGetHeight(self.prototypeCell.bounds));
+    
+    [self.prototypeCell setNeedsLayout];
+    [self.prototypeCell layoutIfNeeded];
+    
+    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return size.height;
+}
 
+
+#pragma mark - SlideNavigationControllerDelegate
+-(BOOL)slideNavigationControllerShouldDisplayLeftMenu {
+    
+    return YES;
+}
+
+#pragma mark - LBHomeViewControllerDelegate
+-(void)gotCustomerInfo:(LBCustomer *)customer {
+    
+    customerEntity = customer;
+}
+
+-(void)gotAccountsOfCustomer:(NSArray *)accounts {
+    
+    for (LBAccount* account in accounts) {
+        
+        [self.cus_accounts addObject:account];
+    }
+}
 
 
 @end

@@ -30,6 +30,8 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
+#define MENU_DEFAULT_SLIDE_OFFSET 60
+
 @protocol SlideNavigationControllerDelegate <NSObject>
 @optional
 - (BOOL)slideNavigationControllerShouldDisplayRightMenu;

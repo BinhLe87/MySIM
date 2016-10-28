@@ -10,18 +10,19 @@
 #import "LBAccount.h"
 #import "LBService.h"
 #import <MagicalRecord.h>
+#import "SDImageCache.h"
 
 @implementation LBCustomer
 
 // Insert code here to add functionality to your managed object subclass
--(LBCustomer*)getCustomerByPhone:(NSString*)phone {
++(LBCustomer*)getCustomerByPhone:(NSString*)phone {
     
     NSPredicate *findByPhone = [NSPredicate predicateWithFormat:@"phone = %@", phone];
     
     return [LBCustomer MR_findFirstWithPredicate:findByPhone];
 }
 
--(void)fetchAccountsByTypeForPhone:(NSString *)phone accountType:(NSString *)accountType completionBlock:(void (^)(NSArray * results))completionBlock {
++(void)fetchAccountsByTypeForPhone:(NSString *)phone accountType:(NSString *)accountType completionBlock:(void (^)(NSArray * results))completionBlock {
     
     NSPredicate *findByPhone = [NSPredicate predicateWithFormat:@"phone = %@", phone];
     LBCustomer *foundCustomer = [LBCustomer MR_findFirstWithPredicate:findByPhone];
@@ -46,5 +47,20 @@
         }
     });
 }
+
+-(UIImage *)getBackgroundImg {
+    
+    UIImage *bkgImg = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:self.backgroundImg];
+    
+    NSLog(@"%@", self.backgroundImg);
+    
+    if (!bkgImg) { //set default background image
+        
+        bkgImg = [UIImage imageNamed:LB_DEFAULT_BACKGROUND];
+    }
+    
+    return bkgImg;
+}
+
 
 @end

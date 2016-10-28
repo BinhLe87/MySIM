@@ -11,12 +11,22 @@
 
 @protocol LBHomeViewControllerDelegate <NSObject>
 
+-(void)gotCustomerInfo:(LBCustomer*)customer;
+-(void)gotAccountsOfCustomer:(NSArray *)accounts;
 
 @end
 
 @protocol LBHomePresenterDelegate <NSObject>
 
--(LBCustomer*)getCustomerInfo;
--(void)getAccountsOfCustomer:(void(^)(NSArray *accounts))completionBlock;
+-(void)getCustomerInfo;
+-(void)getAccountsOfCustomer;
+
+@end
+
+
+@protocol LBHomeDataManagerDelegate <NSObject>
+
+-(LBCustomer*)getCustomerByPhone:(NSString*)phone;
+-(void)fetchAccountsByTypeForPhone:(NSString*)phone accountType:(NSString*)accountType completionBlock:(void(^)(NSArray* results))completionBlock;
 
 @end

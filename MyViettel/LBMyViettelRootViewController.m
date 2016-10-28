@@ -27,6 +27,13 @@
     return _window;
 }
 
+-(void)setLeftMenu:(UIViewController *)leftMenu {
+    
+    _leftMenu = leftMenu;
+    
+    self.navigationController.leftMenu = leftMenu;
+}
+
 -(float) statusBarHeight
 {
     CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
@@ -47,7 +54,7 @@
 -(void)setViewControllersIntoNavController:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
     
     [self.navigationController setViewControllers:viewControllers animated:animated];
-}
+}   
 
 
 @end

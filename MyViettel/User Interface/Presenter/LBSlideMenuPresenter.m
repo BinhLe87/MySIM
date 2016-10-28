@@ -9,9 +9,28 @@
 #import "LBSlideMenuPresenter.h"
 #import "LBSideMenuTableViewCell.h"
 #import "SDImageCache.h"
+#import <MagicalRecord.h>
 
+@interface LBSlideMenuPresenter()
+
+@property(nonatomic)LBCustomer *customer;
+
+@end
 
 @implementation LBSlideMenuPresenter
+
+
+#pragma mark - Initializers
+-(LBCustomer *)customer {
+    
+    if (_customer) return _customer;
+    
+    NSEntityDescription *customerDescription = [NSEntityDescription entityForName:NSStringFromClass([LBCustomer class]) inManagedObjectContext:[NSManagedObjectContext MR_context]];
+    
+    _customer = [[LBCustomer alloc] initWithEntity:customerDescription insertIntoManagedObjectContext:nil];
+    
+    return _customer;
+}
 
 -(NSArray *)menuTableViewCells {
     
@@ -24,7 +43,6 @@
     LBSideMenuTableViewCell *menuItem2 = [[LBSideMenuTableViewCell alloc] initWithIconAndTitle:[UIImage imageNamed:@"worldwide.png"] menuItemTitle:@"Chia sẻ cho bạn bè" hasSeperatorLine:YES];
     
     
-    
     _menuTableViewCells = [[NSArray alloc] initWithObjects:menuItem1, menuItem3, menuItem2, nil];
     
     return _menuTableViewCells;
@@ -34,9 +52,18 @@
 #pragma mark - LBSlideMenuPresenterDelegate
 -(void)getData {
     
-    UIImage *backgroundImg = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:LB_CUSTOMER_AVATAR_KEY];
+    //fetch cus info from NSUserDefaults
+    NSDictionary *cusInfoDic = [UserDefaults dictionaryForKey:UserDefaultsKey(KEYS_CUS_INFO(extern_cus_phone))];
     
-    [_slideMenuVCDelegate showData:self.menuTableViewCells backgroundImgInHeaderView:backgroundImg];
+    NSLog(@"%@", [cusInfoDic objectForKey:@"cus_name"]);
+    
+    
+    [self.customer setName:[cusInfoDic objectForKey:@"cus_name"]];
+    [self.customer setPhone:[cusInfoDic objectForKey:@"cus_phone"]];
+    [self.customer setAvatar_link:[cusInfoDic objectForKey:@"avatar_link"]];
+    [self.customer setBackgroundImg:[cusInfoDic objectForKey:@"backgroundImg"]];
+    
+    [_slideMenuVCDelegate showData:self.customer menuItemArray:self.menuTableViewCells];
 }
 
 -(void)showBackgroundSelectorVC {
@@ -47,7 +74,12 @@
 -(void)didSelectBackgroundImage:(UIImage *)selectedBackgroundImg {
     
     //store selected background to disk for later use
-    [[SDImageCache sharedImageCache] storeImage:selectedBackgroundImg forKey:LB_CUSTOMER_AVATAR_KEY];
+    [[SDImageCache sharedImageCache] storeImage:selectedBackgroundImg forKey:[selectedBackgroundImg accessibilityIdentifier]];
+    
+    //store in NSUserDefaults
+    NSMutableDictionary *cusInfoDic = [[UserDefaults dictionaryForKey:KEYS_CUS_INFO(extern_cus_phone)] mutableCopy];
+    
+    [cusInfoDic setObject:[selectedBackgroundImg accessibilityIdentifier] forKey:@"backgroundImg"];
     
     [self.slideMenuVCDelegate updateBackgroundImage:selectedBackgroundImg];
     [self.slideMenuRouterDelegate dismissSlideMenuBackgroundSelectorVC];

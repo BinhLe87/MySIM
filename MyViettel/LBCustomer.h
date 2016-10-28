@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 @class LBAccount, LBService;
 
@@ -16,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LBCustomer : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
--(LBCustomer*)getCustomerByPhone:(NSString*)phone;
--(void)fetchAccountsByTypeForPhone:(NSString*)phone accountType:(NSString*)accountType completionBlock:(void(^)(NSArray* results))completionBlock;
++(LBCustomer*)getCustomerByPhone:(NSString*)phone;
++(void)fetchAccountsByTypeForPhone:(NSString*)phone accountType:(NSString*)accountType completionBlock:(void(^)(NSArray* results))completionBlock;
+
+-(UIImage*)getBackgroundImg;
 
 @end
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1CA0B71DC1ABA400D33F49 /* LBMyViettelConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1CA0B61DC1ABA400D33F49 /* LBMyViettelConstants.m */; };
 		AB22C3DE1DBA75A500519A98 /* LBHomeHeaderSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22C3DD1DBA75A500519A98 /* LBHomeHeaderSection.m */; };
 		AB22C3E91DBA75CF00519A98 /* LBHomeFooterSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22C3E81DBA75CF00519A98 /* LBHomeFooterSection.m */; };
 		AB2E794E1DB602E40035520E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E794D1DB602E40035520E /* main.m */; };
@@ -472,10 +473,13 @@
 		AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967FE1DB8AF9500191AB6 /* LBCustomer.m */; };
 		AB5968091DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5968001DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m */; };
 		AB59680A1DB8AF9500191AB6 /* LBServiceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */; };
+		AB7CA70D1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA70C1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m */; };
+		AB7CA7181DBF425F00B45D2C /* LBHomeInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA7171DBF425F00B45D2C /* LBHomeInteractor.m */; };
 		ABE2852B1DB776D9007A412F /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852A1DB776D9007A412F /* LBHomeViewController.m */; };
 		ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852D1DB7783C007A412F /* LBHomeHeaderView.m */; };
 		ABE285301DB77850007A412F /* LBHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */; };
 		ABE285331DB78309007A412F /* LBHomeRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE285321DB78309007A412F /* LBHomeRouter.m */; };
+		ABEFD33E1DC08BAD00D94BF9 /* LBCenterBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFD33D1DC08BAD00D94BF9 /* LBCenterBarItemView.m */; };
 		ABF667401DBB184500F5353D /* LBHomeTableCellAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6673E1DBB184500F5353D /* LBHomeTableCellAutoLayout.m */; };
 		ABF667411DBB184500F5353D /* LBHomeTableCellAutoLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF6673F1DBB184500F5353D /* LBHomeTableCellAutoLayout.xib */; };
 /* End PBXBuildFile section */
@@ -562,6 +566,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB1CA0B61DC1ABA400D33F49 /* LBMyViettelConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMyViettelConstants.m; sourceTree = "<group>"; };
 		AB22C3DC1DBA75A500519A98 /* LBHomeHeaderSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeaderSection.h; sourceTree = "<group>"; };
 		AB22C3DD1DBA75A500519A98 /* LBHomeHeaderSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeHeaderSection.m; sourceTree = "<group>"; };
 		AB22C3E71DBA75CF00519A98 /* LBHomeFooterSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeFooterSection.h; sourceTree = "<group>"; };
@@ -1100,6 +1105,10 @@
 		AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBServiceDetails.m; sourceTree = "<group>"; };
 		AB5968671DB8B16400191AB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AB5968891DB8B9C400191AB6 /* LBHomeInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeInterface.h; sourceTree = "<group>"; };
+		AB7CA70B1DBF3ABC00B45D2C /* LBHomeCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeCoreDataManager.h; sourceTree = "<group>"; };
+		AB7CA70C1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCoreDataManager.m; sourceTree = "<group>"; };
+		AB7CA7161DBF425F00B45D2C /* LBHomeInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeInteractor.h; sourceTree = "<group>"; };
+		AB7CA7171DBF425F00B45D2C /* LBHomeInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeInteractor.m; sourceTree = "<group>"; };
 		ABE285291DB776D9007A412F /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
 		ABE2852A1DB776D9007A412F /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
 		ABE2852C1DB7783C007A412F /* LBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeaderView.h; sourceTree = "<group>"; };
@@ -1107,6 +1116,8 @@
 		ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBHomeHeaderView.xib; sourceTree = "<group>"; };
 		ABE285311DB78309007A412F /* LBHomeRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeRouter.h; sourceTree = "<group>"; };
 		ABE285321DB78309007A412F /* LBHomeRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeRouter.m; sourceTree = "<group>"; };
+		ABEFD33C1DC08BAD00D94BF9 /* LBCenterBarItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCenterBarItemView.h; sourceTree = "<group>"; };
+		ABEFD33D1DC08BAD00D94BF9 /* LBCenterBarItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCenterBarItemView.m; sourceTree = "<group>"; };
 		ABF6673D1DBB184500F5353D /* LBHomeTableCellAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeTableCellAutoLayout.h; sourceTree = "<group>"; };
 		ABF6673E1DBB184500F5353D /* LBHomeTableCellAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeTableCellAutoLayout.m; sourceTree = "<group>"; };
 		ABF6673F1DBB184500F5353D /* LBHomeTableCellAutoLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBHomeTableCellAutoLayout.xib; sourceTree = "<group>"; };
@@ -1188,6 +1199,7 @@
 		AB2E79631DB6030C0035520E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABEFD3331DC08B5700D94BF9 /* NavigationBar */,
 				AB2CD63B1DB9A74B002FBA27 /* TableSections */,
 				ABE285291DB776D9007A412F /* LBHomeViewController.h */,
 				ABE2852A1DB776D9007A412F /* LBHomeViewController.m */,
@@ -1220,6 +1232,8 @@
 		AB2E79661DB6032D0035520E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				AB7CA7161DBF425F00B45D2C /* LBHomeInteractor.h */,
+				AB7CA7171DBF425F00B45D2C /* LBHomeInteractor.m */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -1270,18 +1284,20 @@
 		AB2E796C1DB603C50035520E /* Application logic */ = {
 			isa = PBXGroup;
 			children = (
-				AB2E796D1DB603E80035520E /* Manager */,
+				AB2E796D1DB603E80035520E /* Data Stores */,
 				AB2E79661DB6032D0035520E /* Interactor */,
 				AB2E79681DB603410035520E /* Entity */,
 			);
 			name = "Application logic";
 			sourceTree = "<group>";
 		};
-		AB2E796D1DB603E80035520E /* Manager */ = {
+		AB2E796D1DB603E80035520E /* Data Stores */ = {
 			isa = PBXGroup;
 			children = (
+				AB7CA70B1DBF3ABC00B45D2C /* LBHomeCoreDataManager.h */,
+				AB7CA70C1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m */,
 			);
-			name = Manager;
+			name = "Data Stores";
 			sourceTree = "<group>";
 		};
 		AB2E796E1DB603F80035520E /* Libs */ = {
@@ -1355,6 +1371,7 @@
 			isa = PBXGroup;
 			children = (
 				AB581ADA1DB75B6500D546C0 /* LBMyViettelConstants.h */,
+				AB1CA0B61DC1ABA400D33F49 /* LBMyViettelConstants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -2021,6 +2038,15 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		ABEFD3331DC08B5700D94BF9 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				ABEFD33C1DC08BAD00D94BF9 /* LBCenterBarItemView.h */,
+				ABEFD33D1DC08BAD00D94BF9 /* LBCenterBarItemView.m */,
+			);
+			name = NavigationBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2610,20 +2636,24 @@
 				AB581A951DB7081E00D546C0 /* LBSlideMenuHeaderView.m in Sources */,
 				AB2E79E41DB618B30035520E /* View+MASAdditions.m in Sources */,
 				AB581AD21DB756FA00D546C0 /* SDWebImagePrefetcher.m in Sources */,
+				AB7CA7181DBF425F00B45D2C /* LBHomeInteractor.m in Sources */,
 				AB581AD61DB756FA00D546C0 /* UIImage+WebP.m in Sources */,
 				AB581AD11DB756FA00D546C0 /* SDWebImageManager.m in Sources */,
 				AB581B281DB76C7100D546C0 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				AB581ACB1DB756FA00D546C0 /* NSData+ImageContentType.m in Sources */,
 				ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */,
+				AB7CA70D1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m in Sources */,
 				AB2E794E1DB602E40035520E /* main.m in Sources */,
 				AB2E798B1DB611490035520E /* LBSideMenuTableViewCell.m in Sources */,
 				AB5967EC1DB8A9F900191AB6 /* LBHomePresenter.m in Sources */,
 				AB581B291DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				AB2E7CEE1DB62C4C0035520E /* LBMyViettelDependencies.m in Sources */,
 				AB2E79DC1DB618B30035520E /* MASCompositeConstraint.m in Sources */,
+				ABEFD33E1DC08BAD00D94BF9 /* LBCenterBarItemView.m in Sources */,
 				AB2E7CEB1DB6292C0035520E /* LBMyViettelRootViewController.m in Sources */,
 				AB581AD91DB756FA00D546C0 /* UIView+WebCacheOperation.m in Sources */,
 				AB581B1D1DB76C7100D546C0 /* ProfileDetailViewController.m in Sources */,
+				AB1CA0B71DC1ABA400D33F49 /* LBMyViettelConstants.m in Sources */,
 				AB581AD71DB756FA00D546C0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				AB2E79E31DB618B30035520E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 			);

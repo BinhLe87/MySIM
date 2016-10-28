@@ -17,6 +17,7 @@
 @property(nonatomic) LBSlideMenuViewController *slideMenuViewController;
 @property(nonatomic) LBMyViettelRootViewController *rootViewController;
 
--(void)showSlideMenuViewController;
+
+-(void)setAsLeftMenu;
 
 @end

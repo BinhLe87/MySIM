@@ -26,7 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *albumIcon;
 
-@property(nonatomic) LBSlideMenuViewController *slideMenuVC;
+@property(weak, nonatomic) id<LBSlideMenuPresenterDelegate> presenterDelegate;
 
 
 

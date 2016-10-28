@@ -11,6 +11,6 @@
 
 @interface LBSlideMenuChooseBackgroundTableViewController : UITableViewController
 
-@property(nonatomic) LBSlideMenuViewController *slideMenuViewController;
+@property(weak, nonatomic) id<LBSlideMenuPresenterDelegate> presenterDelegate;
 
 @end

@@ -65,7 +65,7 @@
 
 +(CGFloat)heightForHeaderView {
     
-    return 230;
+    return 260;
 }
 
 @end

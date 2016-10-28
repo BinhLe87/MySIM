@@ -42,7 +42,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="camera_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-23-kGj">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="camera_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-23-kGj">
                     <rect key="frame" x="280" y="8" width="32" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="TLu-KF-GIw"/>
@@ -66,6 +66,12 @@
                 <constraint firstAttribute="trailing" secondItem="5vi-DY-Acq" secondAttribute="trailing" id="zZX-9H-Rcs"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="EMi-Os-gJ4"/>
+                    <exclude reference="obn-4L-2LQ"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="382" y="113"/>
         </view>
     </objects>

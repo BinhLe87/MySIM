@@ -10,10 +10,28 @@
 
 @implementation LBHomeRouter
 
+
+-(LBHomeViewController *)homeViewController {
+    
+    if (_homeViewController) return _homeViewController;
+    
+    _homeViewController = [[LBHomeViewController alloc] init];
+    
+    _homeViewController.presenterDelegate = self.homePresenter;
+    
+    return _homeViewController;
+}
+
+-(void)setHomePresenter:(LBHomePresenter *)homePresenter {
+    
+    _homePresenter = homePresenter;
+    _homePresenter.homeVCDelegate = self.homeViewController;
+}
+
 -(void)showHomeViewController {
     
-    [self.rootViewController.navigationController setNavigationBarHidden:YES];
-    [self.rootViewController setViewControllersIntoNavController:@[_homeViewController] animated:YES];
+    //[self.rootViewController.navigationController setNavigationBarHidden:YES];
+    [self.rootViewController setViewControllersIntoNavController:@[self.homeViewController] animated:YES];
 }
 
 @end

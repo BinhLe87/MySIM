@@ -8,6 +8,7 @@
 
 #import "LBSlideMenuHeaderView.h"
 #import "Masonry.h"
+#import "SlideNavigationController.h"
 
 @implementation LBSlideMenuHeaderView
 
@@ -45,12 +46,18 @@
 
 -(void)updateConstraints {
     
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
       
         make.top.equalTo(self.mas_top);
         make.left.equalTo(self.mas_left);
         make.width.equalTo(self.mas_width);
         make.height.equalTo([NSNumber numberWithFloat:[LBSlideMenuHeaderView heightForHeaderView]]);
+    }];
+    
+    [self.albumIcon mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.right.equalTo(self.contentView).offset(-MENU_DEFAULT_SLIDE_OFFSET - 10);
+        make.top.equalTo(self.contentView).offset(10);
     }];
     
     
@@ -88,7 +95,7 @@
 
 -(void)tapOnAlbumBackground:(UITapGestureRecognizer *)recognizer {
     
-    [self.slideMenuVC.presenterDelegate showBackgroundSelectorVC];
+    [self.presenterDelegate showBackgroundSelectorVC];
 }
 
 

@@ -14,6 +14,6 @@
 
 @property(nonatomic) UITableView *tableView;
 @property(nonatomic) NSArray *menuItems;
-@property(nonatomic) id<LBSlideMenuPresenterDelegate> presenterDelegate;
+@property(weak, nonatomic) id<LBSlideMenuPresenterDelegate> presenterDelegate;
 
 @end

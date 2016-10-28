@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "LBHomeInterface.h"
+#import "LBHomeInteractor.h"
+
 
 
 @interface LBHomePresenter : NSObject <LBHomePresenterDelegate>
 
-@property(nonatomic) NSString* cus_phone;
+@property(nonatomic, weak) id<LBHomeViewControllerDelegate> homeVCDelegate;
+@property(nonatomic) LBHomeInteractor *homeInteractor;
 
 @end

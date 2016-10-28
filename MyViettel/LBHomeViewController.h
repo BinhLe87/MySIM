@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LBHomeInterface.h"
+#import "SlideNavigationController.h"
 
 typedef NS_ENUM(NSUInteger, HomeTableSectionType) {
     
@@ -21,7 +22,7 @@ extern int const marginRightSection;
 extern int const spaceBetweenSections;
 extern int const tableViewBackgroundColor;
 
-@interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SlideNavigationControllerDelegate, LBHomeViewControllerDelegate>
 
 @property(nonatomic) UITableView *tableView;
 @property(nonatomic) id<LBHomePresenterDelegate> presenterDelegate;

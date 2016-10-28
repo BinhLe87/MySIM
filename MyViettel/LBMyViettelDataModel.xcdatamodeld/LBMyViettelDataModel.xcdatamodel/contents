@@ -11,7 +11,7 @@
     </entity>
     <entity name="LBCustomer" representedClassName="LBCustomer" syncable="YES">
         <attribute name="avatar_link" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="background_link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="backgroundImg" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="package_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>

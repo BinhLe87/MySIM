@@ -14,6 +14,7 @@
 
 @property(nonatomic) SlideNavigationController *navigationController;
 @property(nonatomic) UIWindow *window;
+@property(nonatomic) UIViewController *leftMenu;
 
 -(void)setViewControllersIntoNavController:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated;
 

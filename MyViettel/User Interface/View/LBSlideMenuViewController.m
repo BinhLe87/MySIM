@@ -10,6 +10,7 @@
 #import "LBSideMenuTableViewCell.h"
 #import "LBSlideMenuHeaderView.h"
 #import "Masonry.h"
+#import "UIImageView+WebCache.h"
 
 @interface LBSlideMenuViewController ()
 
@@ -44,7 +45,7 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableview]|" options:0 metrics:metrics views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableview]|" options:0 metrics:metrics views:views]];
     
-    return _tableView; 
+    return _tableView;
 }
 
 
@@ -53,11 +54,11 @@
     
     
     LBSlideMenuHeaderView *headerView = [LBSlideMenuHeaderView header];
-    headerView.slideMenuVC = self;
+    headerView.presenterDelegate = self.presenterDelegate;
     self.tableView.tableHeaderView = headerView;
     
     [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.height.equalTo([NSNumber numberWithFloat:[LBSlideMenuHeaderView heightForHeaderView]]);
         make.width.equalTo(self.tableView.mas_width);
         make.top.equalTo(self.tableView.mas_top);
@@ -65,12 +66,12 @@
     }];
     
     [self.tableView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       
+        
         if ([NSStringFromClass([obj class]) isEqualToString:@"UITableViewWrapperView"]) {
             
             [obj setTranslatesAutoresizingMaskIntoConstraints:NO];
             [obj mas_makeConstraints:^(MASConstraintMaker *make) {
-               
+                
                 make.top.equalTo(self.tableView.tableHeaderView.mas_bottom);
                 make.left.equalTo(self.tableView.tableHeaderView.mas_left);
                 make.width.equalTo(self.tableView.tableHeaderView.mas_width);
@@ -78,8 +79,6 @@
             }];
         }
     }];
-    
-
     
     [_presenterDelegate getData];
 }
@@ -106,21 +105,6 @@
     return [LBSideMenuTableViewCell heightForTableViewCell];
 }
 
-/*-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    LBSlideMenuHeaderView *headerView = [LBSlideMenuHeaderView header];
-    headerView.slideMenuVC = self;
-    
-    return headerView;
-}*/
-
-
-
-/*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    return [LBSlideMenuHeaderView heightForHeaderView];
-}*/
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LBSideMenuTableViewCell *cell = (LBSideMenuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"SideMenuTableViewCell" forIndexPath:indexPath];
@@ -141,15 +125,17 @@
 
 
 #pragma mark - LBSlideMenuViewControllerDelegate
--(void)showData:(NSArray *)menuItemArray backgroundImgInHeaderView:(UIImage *)backgroundImage{
+-(void)showData:(LBCustomer *)customer menuItemArray:(NSArray *)menuItemArray {
     
     _menuItems = menuItemArray;
     
-    if(backgroundImage) {
-        
-        LBSlideMenuHeaderView *headerView = (LBSlideMenuHeaderView*)self.tableView.tableHeaderView;
-        [headerView.backgroundImage setImage:backgroundImage];
-    }
+    LBSlideMenuHeaderView *headerView = (LBSlideMenuHeaderView*)self.tableView.tableHeaderView;
+    [headerView.backgroundImage setImage:[customer getBackgroundImg]];
+    headerView.cusNameLbl.text = customer.name;
+    headerView.cusPhoneLbl.text = customer.phone;
+    [headerView.cusAvatarImage sd_setImageWithURL:[NSURL URLWithString:customer.avatar_link]];
+    
+    
     
     [self.tableView reloadData];
 }
@@ -159,6 +145,7 @@
     LBSlideMenuHeaderView *headerView = (LBSlideMenuHeaderView*)self.tableView.tableHeaderView;
     [headerView.backgroundImage setImage:backgroundImage];
 }
+
 
 
 @end

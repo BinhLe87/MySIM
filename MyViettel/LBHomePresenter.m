@@ -9,11 +9,7 @@
 #import "LBHomePresenter.h"
 #import "LBCustomer.h"
 
-@interface LBHomePresenter()
 
-@property(nonatomic) LBCustomer *customerEntity;
-
-@end
 
 @implementation LBHomePresenter
 
@@ -21,34 +17,42 @@
     
     if(!(self = [super init])) return nil;
     
-    _cus_phone = @"0977073999";
-    
     return self;
 }
 
 #pragma mark - Initializers
--(LBCustomer *)customerEntity {
-    
-    if(_customerEntity) return _customerEntity;
-    
-    _customerEntity = [[LBCustomer alloc] init];
-    
-    return _customerEntity;
-}
+
 
 #pragma mark - LBHomePresenterDelegate
--(LBCustomer *)getCustomerInfo{
+-(void)getCustomerInfo{
     
-   return [self.customerEntity getCustomerByPhone:self.cus_phone];
+    LBCustomer *customer = [self.homeInteractor getCustomerByPhone:extern_cus_phone];
+    
+    //cache into NSUseDefaults
+    NSMutableDictionary *cusInfoDic = [[NSMutableDictionary alloc] init];
+    
+    [cusInfoDic setObject:customer.phone forKey:@"cus_phone"];
+    [cusInfoDic setObject:customer.avatar_link forKey:@"avatar_link"];
+    [cusInfoDic setObject:customer.name forKey:@"cus_name"];
+    [UserDefaults setObject:cusInfoDic forKey:UserDefaultsKey(KEYS_CUS_INFO(extern_cus_phone))];
+    
+    //fetch backgroundImg from cache
+    NSDictionary *cachedCusInfo = [UserDefaults dictionaryForKey:KEYS_CUS_INFO(extern_cus_phone)];
+    [customer setBackgroundImg:[cachedCusInfo objectForKey:@"backgroundImg"]];
+    
+
+    
+    
+    [self.homeVCDelegate gotCustomerInfo:customer];
 }
 
--(void)getAccountsOfCustomer:(void (^)(NSArray *))completionBlock {
+-(void)getAccountsOfCustomer {
     
-    [self.customerEntity fetchAccountsByTypeForPhone:self.cus_phone accountType:@"DATA" completionBlock:^(NSArray *results) {
-        
-        completionBlock(results);
+    [self.homeInteractor fetchAccountsByTypeForPhone:extern_cus_phone accountType:@"DATA" completionBlock:^(NSArray *results) {
+    
+        [self.homeVCDelegate gotAccountsOfCustomer:results];
     }];
 }
-    
+
 
 @end

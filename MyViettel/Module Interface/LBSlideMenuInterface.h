@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "LBCustomer.h"
 
 @interface LBSlideMenuInterface : NSObject
 
@@ -25,9 +26,8 @@
 
 @protocol LBSlideMenuViewControllerDelegate <NSObject>
 
--(void)showData:(NSArray *)menuItemArray backgroundImgInHeaderView:(UIImage*)backgroundImage;
+-(void)showData:(LBCustomer*)customer menuItemArray:(NSArray *)menuItemArray;
 -(void)updateBackgroundImage:(UIImage*)backgroundImage;
-
 @end
 
 
