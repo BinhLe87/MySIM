@@ -10,22 +10,32 @@
 
 @implementation LBHomeRouter
 
-
--(LBHomeViewController *)homeViewController {
+-(instancetype)init {
     
-    if (_homeViewController) return _homeViewController;
-    
+    if (!(self = [super init])) return nil;
+        
     _homeViewController = [[LBHomeViewController alloc] init];
     
-    _homeViewController.presenterDelegate = self.homePresenter;
+    return self;
+}
+
+
+-(void)setSlideMenuViewController:(LBSlideMenuViewController *)slideMenuViewController {
     
-    return _homeViewController;
+    _slideMenuViewController = slideMenuViewController;
+    
+    _slideMenuViewController.transitioningDelegate = _homeViewController;
+    _slideMenuViewController.modalTransitionStyle = UIModalPresentationCustom;
+    
+    _homeViewController.slideMenuViewController = slideMenuViewController;
 }
 
 -(void)setHomePresenter:(LBHomePresenter *)homePresenter {
     
     _homePresenter = homePresenter;
     _homePresenter.homeVCDelegate = self.homeViewController;
+    
+    _homeViewController.presenterDelegate = homePresenter;
 }
 
 -(void)showHomeViewController {

@@ -8,13 +8,16 @@
 
 #import "AppDelegate.h"
 #import <MagicalRecord/MagicalRecord.h>
-
+#import <FBMemoryProfiler/FBMemoryProfiler.h>
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    
+    FBMemoryProfiler *internalMemoryProfiler;
+}
 
 #pragma mark - Initializers
 -(LBMyViettelDependencies *)myViettelDependencies {
@@ -29,6 +32,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //FacebookMemory Profiler
+    
+    FBMemoryProfiler *memoryProfiler = [FBMemoryProfiler new];
+    [memoryProfiler enable];
+    
+    // Store memory profiler somewhere to extend it's lifetime
+    internalMemoryProfiler = memoryProfiler;
+    
     
     [self.myViettelDependencies.homeRouter showHomeViewController];
     

@@ -39,11 +39,10 @@
     LBSlideMenuPresenter *slideMenuPresenter = [[LBSlideMenuPresenter alloc] init];
     _slideMenuRouter = [[LBSlideMenuRouter alloc] init];
     
-
     slideMenuPresenter.slideMenuRouterDelegate = _slideMenuRouter;
     _slideMenuRouter.slideMenuPresenter = slideMenuPresenter;
     _slideMenuRouter.rootViewController = rootViewController;
-    [_slideMenuRouter setAsLeftMenu];
+    
     
     //TODO: HomeView - add dependencies
     LBHomePresenter *homePresenter = [[LBHomePresenter alloc] init];
@@ -55,6 +54,7 @@
     _homeRouter = [[LBHomeRouter alloc] init];
     _homeRouter.rootViewController = rootViewController;
     _homeRouter.homePresenter = homePresenter;
+    _homeRouter.slideMenuViewController = _slideMenuRouter.slideMenuViewController;
 }
 
 @end

@@ -18,6 +18,6 @@
 @property(nonatomic) LBMyViettelRootViewController *rootViewController;
 
 
--(void)setAsLeftMenu;
+
 
 @end

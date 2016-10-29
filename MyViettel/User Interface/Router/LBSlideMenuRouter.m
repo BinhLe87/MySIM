@@ -49,9 +49,9 @@
     
     [self.slideMenuViewController presentViewController:backgroundSelectorVC animated:YES completion:nil];*/
     
-    [self.rootViewController.navigationController switchToViewController:backgroundSelectorVC withCompletion:nil];
+   
     
-    UIViewControllerAnimatedTransitioning
+   
     
 }
 
@@ -60,9 +60,5 @@
     [self.slideMenuViewController.navigationController popToRootViewControllerAnimated:YES];
 }
 
--(void)setAsLeftMenu {
-    
-    [self.rootViewController setLeftMenu:_slideMenuViewController];
-}
 
 @end

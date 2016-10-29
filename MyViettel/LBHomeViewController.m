@@ -16,6 +16,8 @@
 #import "LBHomeFooterSection.h"
 #import "LBHomeHeaderSection.h"
 #import "LBCenterBarItemView.h"
+#import "LBViewInteractive.h"
+#import "LBSlideLeftAnimator.h"
 
 
 @interface LBHomeViewController ()
@@ -24,6 +26,9 @@
 @property(nonatomic)NSMutableArray *cus_accounts;
 @property (nonatomic, strong) LBHomeTableCellAutoLayout *prototypeCell;
 @property(nonatomic)LBCenterBarItemView *_navbarCenterView;
+
+@property(nonatomic) LBViewInteractive *presentInteractor;
+@property(nonatomic) LBViewInteractive *dismissInteractor;
 
 @end
 
@@ -114,10 +119,15 @@ int const spaceBetweenSections = 20;
     self.navigationItem.titleView = navbarCenterView;
     [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
     
-    /*[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                             forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;*/
+    
+    //TODO: set up Interactive Transition for Slide Menu
+    self.disableInteractivePlayerTransitioning = NO;
+    self.presentInteractor = [[LBViewInteractive alloc] init];
+    [self.presentInteractor attachToViewController:self withView:self.view presentedViewController:self.slideMenuViewController panGestureType:PanGesTureTypeBasic];
+ //   ((UIScreenEdgePanGestureRecognizer*)self.presentInteractor.panGesture).edges = UIRectEdgeLeft;
+    
+    self.dismissInteractor = [[LBViewInteractive alloc] init];
+    [self.dismissInteractor attachToViewController:self.slideMenuViewController withView:self.slideMenuViewController.view presentedViewController:nil panGestureType:PanGesTureTypeBasic];
 }
 
 
@@ -158,9 +168,17 @@ int const spaceBetweenSections = 20;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+}
+
 -(void)viewDidLayoutSubviews {
     
-    [super viewDidLayoutSubviews];
+    //[super viewDidLayoutSubviews];
+    self.navigationController.view.frame = [UIScreen mainScreen].bounds;
+    self.view.frame = [UIScreen mainScreen].bounds;
     
     self.tableView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     
@@ -299,12 +317,6 @@ int const spaceBetweenSections = 20;
 }
 
 
-#pragma mark - SlideNavigationControllerDelegate
--(BOOL)slideNavigationControllerShouldDisplayLeftMenu {
-    
-    return YES;
-}
-
 #pragma mark - LBHomeViewControllerDelegate
 -(void)gotCustomerInfo:(LBCustomer *)customer {
     
@@ -318,6 +330,47 @@ int const spaceBetweenSections = 20;
         [self.cus_accounts addObject:account];
     }
 }
+
+
+#pragma mark - UIViewControllerTransitioningDelegate
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    
+    LBSlideLeftAnimator *animator = [[LBSlideLeftAnimator alloc] init];
+    animator.transitionType = ModalAnimatedTransitioningTypePresent;
+    
+    return animator;
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    
+    LBSlideLeftAnimator *animator = [[LBSlideLeftAnimator alloc] init];
+    animator.transitionType = ModalAnimatedTransitioningTypeDismiss;
+    
+    return animator;
+}
+
+-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
+    
+    if (!self.disableInteractivePlayerTransitioning) {
+        
+        NSLog(@"presented VC is %@", self.presentedViewController);
+        
+        return self.presentInteractor;
+    }
+    
+    return nil;
+}
+
+-(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+    
+    if (!self.disableInteractivePlayerTransitioning) {
+        
+        return self.dismissInteractor;
+    }
+    
+    return nil;
+}
+
 
 
 @end

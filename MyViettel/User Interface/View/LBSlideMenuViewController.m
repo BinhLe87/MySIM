@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
 
+static int LB_SLIDE_MENU_WIDTH_OFFSET = 60;
 @interface LBSlideMenuViewController ()
 
 @end
@@ -27,7 +28,6 @@
     _tableView = [[UITableView alloc] init];
     [self.view addSubview:_tableView];
     
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
@@ -39,11 +39,11 @@
     [_tableView setShowsHorizontalScrollIndicator:NO];
     
     //layout tableview
-    NSDictionary *metrics = nil;
+    /*NSDictionary *metrics = nil;
     NSDictionary *views = @{@"tableview": _tableView};
     [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableview]|" options:0 metrics:metrics views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableview]|" options:0 metrics:metrics views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableview]|" options:0 metrics:metrics views:views]];*/
     
     return _tableView;
 }
@@ -52,6 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     
     LBSlideMenuHeaderView *headerView = [LBSlideMenuHeaderView header];
     headerView.presenterDelegate = self.presenterDelegate;
@@ -81,6 +82,27 @@
     }];
     
     [_presenterDelegate getData];
+}
+
+
+-(void)updateViewConstraints {
+        
+    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.equalTo(self.view);
+        make.top.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.width.equalTo(self.view).offset(-LB_SLIDE_MENU_WIDTH_OFFSET);
+    }];
+    
+    [super updateViewConstraints];
+}
+
+
+
+-(void)viewWillAppear:(BOOL)animated {
+
+    self.view.frame = [UIScreen mainScreen].bounds;
 }
 
 - (void)didReceiveMemoryWarning {

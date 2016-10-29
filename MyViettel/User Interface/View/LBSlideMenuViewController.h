@@ -15,5 +15,6 @@
 @property(nonatomic) UITableView *tableView;
 @property(nonatomic) NSArray *menuItems;
 @property(weak, nonatomic) id<LBSlideMenuPresenterDelegate> presenterDelegate;
+@property(nonatomic) CGFloat animationPercentProgress;
 
 @end

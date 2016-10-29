@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LBHomeInterface.h"
-#import "SlideNavigationController.h"
+#import "LBSlideMenuViewController.h"
 
 typedef NS_ENUM(NSUInteger, HomeTableSectionType) {
     
@@ -22,9 +22,12 @@ extern int const marginRightSection;
 extern int const spaceBetweenSections;
 extern int const tableViewBackgroundColor;
 
-@interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SlideNavigationControllerDelegate, LBHomeViewControllerDelegate>
+@interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, LBHomeViewControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property(nonatomic) UITableView *tableView;
 @property(nonatomic) id<LBHomePresenterDelegate> presenterDelegate;
+
+@property(nonatomic) LBSlideMenuViewController *slideMenuViewController;
+@property(nonatomic) BOOL disableInteractivePlayerTransitioning;
 
 @end

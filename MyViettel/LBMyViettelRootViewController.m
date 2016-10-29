@@ -27,12 +27,7 @@
     return _window;
 }
 
--(void)setLeftMenu:(UIViewController *)leftMenu {
-    
-    _leftMenu = leftMenu;
-    
-    self.navigationController.leftMenu = leftMenu;
-}
+
 
 -(float) statusBarHeight
 {
@@ -44,7 +39,7 @@
     
     if (_navigationController) return _navigationController;
     
-    _navigationController = [[SlideNavigationController alloc] init];
+    _navigationController = [[UINavigationController alloc] init];
     
     self.window.rootViewController = _navigationController;
     
