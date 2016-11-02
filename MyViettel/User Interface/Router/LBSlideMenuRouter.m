@@ -10,6 +10,13 @@
 #import "LBSlideMenuChooseBackgroundTableViewController.h"
 
 
+@interface LBSlideMenuRouter()
+
+@property(nonatomic) LBSlideMenuViewController *slideMenuViewController;
+
+
+@end
+
 @implementation LBSlideMenuRouter
 
 #pragma mark - Initializers
@@ -34,6 +41,14 @@
 }
 
 
+-(UINavigationController *)navigationController {
+    
+    if (_navigationController) return _navigationController;
+    
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:self.slideMenuViewController];
+    
+    return _navigationController;
+}
 
 
 #pragma mark - LBSlideMenuRouterDelegate
@@ -42,22 +57,13 @@
     LBSlideMenuChooseBackgroundTableViewController *backgroundSelectorVC = [[LBSlideMenuChooseBackgroundTableViewController alloc] init];
     backgroundSelectorVC.presenterDelegate = self.slideMenuPresenter;
     
-    //[self.rootViewController.navigationController pushViewController:backgroundSelectorVC animated:YES];
-    
-    /*backgroundSelectorVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    backgroundSelectorVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    
-    [self.slideMenuViewController presentViewController:backgroundSelectorVC animated:YES completion:nil];*/
-    
-   
-    
-   
-    
+    [_slideMenuViewController.navigationController setNavigationBarHidden:NO];
+    [_slideMenuViewController.navigationController pushViewController:backgroundSelectorVC animated:YES]; 
 }
 
 -(void)dismissSlideMenuBackgroundSelectorVC {
     
-    [self.slideMenuViewController.navigationController popToRootViewControllerAnimated:YES];
+    [self.slideMenuViewController.navigationController popToRootViewControllerAnimated:NO];
 }
 
 

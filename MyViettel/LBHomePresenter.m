@@ -9,9 +9,14 @@
 #import "LBHomePresenter.h"
 #import "LBCustomer.h"
 
+@interface LBHomePresenter()
 
+@property(nonatomic) LBCustomer *_customer;
+
+@end
 
 @implementation LBHomePresenter
+@synthesize _customer = customer;
 
 -(instancetype)init {
     
@@ -26,7 +31,7 @@
 #pragma mark - LBHomePresenterDelegate
 -(void)getCustomerInfo{
     
-    LBCustomer *customer = [self.homeInteractor getCustomerByPhone:extern_cus_phone];
+    customer = [self.homeInteractor getCustomerByPhone:extern_cus_phone];
     
     //cache into NSUseDefaults
     NSMutableDictionary *cusInfoDic = [[NSMutableDictionary alloc] init];
@@ -41,18 +46,30 @@
     [customer setBackgroundImg:[cachedCusInfo objectForKey:@"backgroundImg"]];
     
 
-    
-    
     [self.homeVCDelegate gotCustomerInfo:customer];
 }
 
 -(void)getAccountsOfCustomer {
     
     [self.homeInteractor fetchAccountsByTypeForPhone:extern_cus_phone accountType:@"DATA" completionBlock:^(NSArray *results) {
-    
+
         [self.homeVCDelegate gotAccountsOfCustomer:results];
     }];
 }
 
+-(void)presentSlideMenuViewController {
+    
+    [self.homeRouterDelegate presentSlideMenuViewController];
+}
+
+-(void)showCusInfoViewController {
+    
+    [self.homeRouterDelegate showCusInfoViewController:customer];
+}
+
+-(void)updateBackgroundImage:(UIImage *)backgroundImg {
+    
+    [self.homeVCDelegate updateBackgroundImage:backgroundImg];
+}
 
 @end

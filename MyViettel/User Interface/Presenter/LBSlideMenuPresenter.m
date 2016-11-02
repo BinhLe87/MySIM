@@ -82,6 +82,7 @@
     [cusInfoDic setObject:[selectedBackgroundImg accessibilityIdentifier] forKey:@"backgroundImg"];
     
     [self.slideMenuVCDelegate updateBackgroundImage:selectedBackgroundImg];
+    [self.homePresenterDelegate updateBackgroundImage:selectedBackgroundImg];
     [self.slideMenuRouterDelegate dismissSlideMenuBackgroundSelectorVC];
 }
 

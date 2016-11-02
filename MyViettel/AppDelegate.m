@@ -31,22 +31,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-    //FacebookMemory Profiler
-    
-    FBMemoryProfiler *memoryProfiler = [FBMemoryProfiler new];
+    //TODO: enable FacebookMemory Profiler
+    /*FBMemoryProfiler *memoryProfiler = [FBMemoryProfiler new];
     [memoryProfiler enable];
     
     // Store memory profiler somewhere to extend it's lifetime
-    internalMemoryProfiler = memoryProfiler;
-    
-    
-    [self.myViettelDependencies.homeRouter showHomeViewController];
+    internalMemoryProfiler = memoryProfiler;*/
     
     //Core data
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"LBMyViettelDataModel"];
     
+    
+    [self.myViettelDependencies.homeRouter showHomeViewController];
     
     return YES;
 }

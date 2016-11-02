@@ -34,7 +34,7 @@
 @interface LBCenterBarItemView : UIView
 
 @property(nonatomic)UIView *appNameView;
-@property(nonatomic)UIView *appLogoView;
+//@property(nonatomic)UIView *appLogoView;
 @property(nonatomic)UIView *searchIconView;
 
 @end

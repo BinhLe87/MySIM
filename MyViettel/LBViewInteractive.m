@@ -60,13 +60,9 @@ static int LB_SCREEN_OFFSET = 60;
                 }
                 
                 if (allowToPresentVC) {
-                
+                                            
                     [self.presentingViewController presentViewController:self.presentedViewController animated:YES completion:nil];
                 }
-                
-                NSLog(@"allowToPresentVC is %hhd", allowToPresentVC);
-
-                
             } else {
                 
                 [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

@@ -13,6 +13,7 @@
 
 -(void)gotCustomerInfo:(LBCustomer*)customer;
 -(void)gotAccountsOfCustomer:(NSArray *)accounts;
+-(void)updateBackgroundImage:(UIImage *)backgroundImg;
 
 @end
 
@@ -20,12 +21,24 @@
 
 -(void)getCustomerInfo;
 -(void)getAccountsOfCustomer;
+-(void)showCusInfoViewController;
+-(void)presentSlideMenuViewController;
+-(void)updateBackgroundImage:(UIImage *)backgroundImg;
 
+
+@end
+
+
+@protocol LBHomeRouterDelegate <NSObject>
+
+-(void)showCusInfoViewController:(LBCustomer*)customer;
+-(void)presentSlideMenuViewController;
 @end
 
 
 @protocol LBHomeDataManagerDelegate <NSObject>
 
+@required
 -(LBCustomer*)getCustomerByPhone:(NSString*)phone;
 -(void)fetchAccountsByTypeForPhone:(NSString*)phone accountType:(NSString*)accountType completionBlock:(void(^)(NSArray* results))completionBlock;
 

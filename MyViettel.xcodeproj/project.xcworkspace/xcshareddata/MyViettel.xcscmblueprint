@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6244D2689C8894C79360F4BB85645228F4385D68",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6244D2689C8894C79360F4BB85645228F4385D68" : 0,
+    "958932E9D08E4465709D54DB1E7CECF23B0F442E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CB616847-317A-42A3-AEE4-CD485BA61256",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6244D2689C8894C79360F4BB85645228F4385D68" : "MyViettel\/",
+    "958932E9D08E4465709D54DB1E7CECF23B0F442E" : "MyViettel\/MyViettel\/MagicalRecord\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MyViettel",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyViettel.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/whisky87\/MySIM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6244D2689C8894C79360F4BB85645228F4385D68"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/magicalpanda\/MagicalRecord.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "958932E9D08E4465709D54DB1E7CECF23B0F442E"
+    }
+  ]
+}

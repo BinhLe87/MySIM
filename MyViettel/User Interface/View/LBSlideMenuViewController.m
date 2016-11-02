@@ -15,6 +15,7 @@
 static int LB_SLIDE_MENU_WIDTH_OFFSET = 60;
 @interface LBSlideMenuViewController ()
 
+@property(nonatomic) LBSlideMenuHeaderView *headerView;
 @end
 
 @implementation LBSlideMenuViewController
@@ -38,33 +39,47 @@ static int LB_SLIDE_MENU_WIDTH_OFFSET = 60;
     [_tableView setShowsVerticalScrollIndicator:NO];
     [_tableView setShowsHorizontalScrollIndicator:NO];
     
-    //layout tableview
-    /*NSDictionary *metrics = nil;
-    NSDictionary *views = @{@"tableview": _tableView};
-    [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[tableview]|" options:0 metrics:metrics views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableview]|" options:0 metrics:metrics views:views]];*/
-    
     return _tableView;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
+    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    LBSlideMenuHeaderView *headerView = [LBSlideMenuHeaderView header];
-    headerView.presenterDelegate = self.presenterDelegate;
-    self.tableView.tableHeaderView = headerView;
+    _headerView = [LBSlideMenuHeaderView header];
+    _headerView.presenterDelegate = self.presenterDelegate;
+    self.tableView.tableHeaderView = _headerView;
     
-    [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_presenterDelegate getData];
+}
+
+
+-(void)updateViewConstraints {
+        
+    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.equalTo(self.view);
+        make.top.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.width.equalTo(self.view).offset(-LB_SLIDE_MENU_WIDTH_OFFSET);
+    }];
+    
+    [self.view mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.edges.equalTo(self.navigationController.view);
+    }];
+    
+    
+    [_headerView mas_updateConstraints:^(MASConstraintMaker *make) {
         
         make.height.equalTo([NSNumber numberWithFloat:[LBSlideMenuHeaderView heightForHeaderView]]);
         make.width.equalTo(self.tableView.mas_width);
         make.top.equalTo(self.tableView.mas_top);
         make.left.equalTo(self.tableView.mas_left);
     }];
+    
     
     [self.tableView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -81,28 +96,22 @@ static int LB_SLIDE_MENU_WIDTH_OFFSET = 60;
         }
     }];
     
-    [_presenterDelegate getData];
-}
-
-
--(void)updateViewConstraints {
-        
-    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.equalTo(self.view);
-        make.top.equalTo(self.view);
-        make.bottom.equalTo(self.view);
-        make.width.equalTo(self.view).offset(-LB_SLIDE_MENU_WIDTH_OFFSET);
-    }];
-    
     [super updateViewConstraints];
 }
 
 
-
 -(void)viewWillAppear:(BOOL)animated {
 
-    self.view.frame = [UIScreen mainScreen].bounds;
+    self.navigationController.view.frame = [UIScreen mainScreen].bounds;
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+-(void)viewDidLayoutSubviews {
+    
+    [self.view setNeedsUpdateConstraints];
+    [self.view updateConstraintsIfNeeded];
+    
+    [super viewDidLayoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,8 +149,6 @@ static int LB_SLIDE_MENU_WIDTH_OFFSET = 60;
     
     [cell setupUI];
     
-    
-    
     return cell;
 }
 
@@ -156,8 +163,6 @@ static int LB_SLIDE_MENU_WIDTH_OFFSET = 60;
     headerView.cusNameLbl.text = customer.name;
     headerView.cusPhoneLbl.text = customer.phone;
     [headerView.cusAvatarImage sd_setImageWithURL:[NSURL URLWithString:customer.avatar_link]];
-    
-    
     
     [self.tableView reloadData];
 }

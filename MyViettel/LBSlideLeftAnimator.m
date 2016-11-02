@@ -35,20 +35,8 @@ static NSTimeInterval kAnimationDuration = 0.5f;
 }
 
 -(void)animatePresentingInContext:(id<UIViewControllerContextTransitioning>)transitionContext toVC:(UIViewController *)toVC fromVC:(UIViewController *)fromVC {
-
-
-    /*@try {
-        [toVC.view setNeedsLayout];
-        [toVC.view layoutIfNeeded];
-    } @catch (NSException *exception) {
-        NSLog(@"error %@", exception);
-    }*/ 
     
     CGRect toVCRect = toVC.view.frame;
-    
-    NSLog(@"toVCRect %@", NSStringFromCGRect(toVCRect));
-    
-
     CGRect toVCRectStart = toVCRect;
     
     toVCRectStart.origin.x = -toVCRect.size.width;
@@ -66,7 +54,6 @@ static NSTimeInterval kAnimationDuration = 0.5f;
     [container addSubview:fromVC.view];
     [container addSubview:toVC.view];
 
-    
     [UIView animateWithDuration:kAnimationDuration animations:^{
         
         CGRect toVCRectEnd = toVC.view.frame;

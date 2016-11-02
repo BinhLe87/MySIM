@@ -10,12 +10,14 @@
 #import "LBSlideMenuInterface.h"
 #import "LBSlideMenuViewController.h"
 #import "LBCustomer.h"
+#import "LBHomeInterface.h"
 
 @interface LBSlideMenuPresenter : NSObject <LBSlideMenuPresenterDelegate>
 
 @property(nonatomic) NSArray* menuTableViewCells;
 @property(nonatomic) id <LBSlideMenuViewControllerDelegate> slideMenuVCDelegate;
 @property(nonatomic) id <LBSlideMenuRouterDelegate> slideMenuRouterDelegate;
+@property(nonatomic) id <LBHomePresenterDelegate> homePresenterDelegate;
 
 
 @end

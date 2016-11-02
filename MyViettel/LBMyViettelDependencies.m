@@ -7,19 +7,28 @@
 //
 
 #import "LBMyViettelDependencies.h"
+//Data store
+#import "LBDataStoreManager.h"
+#import "LBCoreDataManager.h"
 //RootViewController
-#import "LBMyViettelRootViewController.h"
+#import "LBRootRouter.h"
 //Slide menu
 #import "LBSlideMenuPresenter.h"
 //HomeView
 #import "LBHomeRouter.h"
 #import "LBHomePresenter.h"
 #import "LBHomeInteractor.h"
-#import "LBHomeCoreDataManager.h"
+//CusInfo
+#import "LBCusInfoRouter.h"
+#import "LBCusInfoPresenter.h"
 
 
 
-@implementation LBMyViettelDependencies
+
+@implementation LBMyViettelDependencies {
+    
+    LBDataStoreManager *dataStoreManager;
+}
 
 -(instancetype)init {
     
@@ -32,29 +41,43 @@
 
 -(void)configureDependencies {
     
-    LBMyViettelRootViewController *rootViewController = [[LBMyViettelRootViewController alloc] init];
+    LBRootRouter *rootRouter = [[LBRootRouter alloc] init];
+    dataStoreManager = [[LBCoreDataManager alloc] init];
+    
     
     //TODO: Slide menu - add dependencies
-
     LBSlideMenuPresenter *slideMenuPresenter = [[LBSlideMenuPresenter alloc] init];
     _slideMenuRouter = [[LBSlideMenuRouter alloc] init];
     
     slideMenuPresenter.slideMenuRouterDelegate = _slideMenuRouter;
     _slideMenuRouter.slideMenuPresenter = slideMenuPresenter;
-    _slideMenuRouter.rootViewController = rootViewController;
+    _slideMenuRouter.rootRouter = rootRouter;
     
     
     //TODO: HomeView - add dependencies
     LBHomePresenter *homePresenter = [[LBHomePresenter alloc] init];
     LBHomeInteractor *homeInteractor = [[LBHomeInteractor alloc] init];
-    LBHomeCoreDataManager *homeCoreDateManager = [[LBHomeCoreDataManager alloc] init];
     
-    homeInteractor.homeDataManagerDelegate = homeCoreDateManager;
+    homeInteractor.homeDataManagerDelegate = dataStoreManager;
     homePresenter.homeInteractor = homeInteractor;
     _homeRouter = [[LBHomeRouter alloc] init];
-    _homeRouter.rootViewController = rootViewController;
+    _homeRouter.rootRouter = rootRouter;
     _homeRouter.homePresenter = homePresenter;
-    _homeRouter.slideMenuViewController = _slideMenuRouter.slideMenuViewController;
+    _homeRouter.slideMenuRouter = _slideMenuRouter;
+    homePresenter.homeRouterDelegate = _homeRouter;
+    [_homeRouter setupViewTransitions];
+    
+    slideMenuPresenter.homePresenterDelegate = homePresenter;
+    
+    //TODO: CusInfo - add dependencies
+    LBCusInfoRouter *cusInfoRouter = [[LBCusInfoRouter alloc] init];
+    LBCusInfoPresenter *cusInfoPresenter = [[LBCusInfoPresenter alloc] init];
+    
+    cusInfoPresenter.cusInfoRouter = cusInfoRouter;
+    cusInfoRouter.cusInfoPresenter = cusInfoPresenter;
+    
+    
+    _homeRouter.cusInfoRouter = cusInfoRouter;
 }
 
 @end

@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "LBSlideMenuPresenter.h"
 #import "LBSlideMenuViewController.h"
-#import "LBMyViettelRootViewController.h"
+#import "LBRootRouter.h"
 
 @interface LBSlideMenuRouter : NSObject <LBSlideMenuRouterDelegate>
 
 @property(nonatomic) LBSlideMenuPresenter *slideMenuPresenter;
-@property(nonatomic) LBSlideMenuViewController *slideMenuViewController;
-@property(nonatomic) LBMyViettelRootViewController *rootViewController;
+@property(nonatomic) LBRootRouter *rootRouter;
+@property(nonatomic) UINavigationController *navigationController;
 
 
 

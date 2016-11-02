@@ -29,7 +29,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //// Color Declarations
-    UIColor* shadow2Color = [UIColor colorWithRed: 0.207 green: 0.814 blue: 0.755 alpha: 0.729];
+    UIColor* shadow2Color = [UIColor colorWithRed: 1.0 green: 0.545 blue: 0 alpha: 0.729];
     
     //// Shadow Declarations
     NSShadow* shadow2 = [[NSShadow alloc] init];
@@ -47,7 +47,7 @@
         NSMutableParagraphStyle* textStyle = [NSMutableParagraphStyle new];
         textStyle.alignment = NSTextAlignmentCenter;
         
-        NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Copperplate-Bold" size: 35], NSForegroundColorAttributeName: [UIColor whiteColor], NSParagraphStyleAttributeName: textStyle};
+        NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Copperplate-Bold" size: 35], NSForegroundColorAttributeName: UIColorFromRGB(0x55D098), NSParagraphStyleAttributeName: textStyle};
         
         CGFloat textTextHeight = [textContent boundingRectWithSize: CGSizeMake(textInset.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
         CGContextSaveGState(context);
@@ -206,7 +206,7 @@
     return _appNameView;
 }
 
--(UIView *)appLogoView {
+/*-(UIView *)appLogoView {
     
     if (_appLogoView) return _appLogoView;
     
@@ -215,7 +215,7 @@
     [self addSubview:_appLogoView];
     
     return _appLogoView;
-}
+}*/
 
 -(UIView *)searchIconView {
     
@@ -246,19 +246,20 @@
         make.width.equalTo(@(CGRectGetHeight(self.frame) - self.topPadding - self.bottomPadding));
     }];
     
-    [self.appLogoView mas_updateConstraints:^(MASConstraintMaker *make) {
+    /*[self.appLogoView mas_updateConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(self).offset(self.topPadding);
         make.bottom.equalTo(self).offset(-self.bottomPadding);
         make.right.equalTo(self.searchIconView.mas_left).offset(-self.leftRightPadding);
         make.width.equalTo(@(CGRectGetHeight(self.frame) - self.topPadding - self.bottomPadding));
-    }];
+    }];*/
     
     [self.appNameView mas_updateConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(self).offset(self.topPadding);
         make.bottom.equalTo(self).offset(-self.bottomPadding);
-        make.right.equalTo(self.appLogoView.mas_left).offset(-self.leftRightPadding);
+      //  make.right.equalTo(self.appLogoView.mas_left).offset(-self.leftRightPadding);
+        make.width.equalTo(self).offset(-40);
         make.left.equalTo(self).offset(self.leftRightPadding);
     }];
     

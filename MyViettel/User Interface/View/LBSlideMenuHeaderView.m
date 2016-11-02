@@ -56,7 +56,7 @@
     
     [self.albumIcon mas_updateConstraints:^(MASConstraintMaker *make) {
        
-        make.right.equalTo(self.contentView).offset(-MENU_DEFAULT_SLIDE_OFFSET - 10);
+        make.right.equalTo(self.contentView).offset(-10);
         make.top.equalTo(self.contentView).offset(10);
     }];
     

@@ -2,7 +2,7 @@
 //  LBCustomer+CoreDataProperties.m
 //  MyViettel
 //
-//  Created by Le Van Binh on 10/27/16.
+//  Created by Le Van Binh on 11/2/16.
 //  Copyright © 2016 LBComp. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,6 +18,9 @@
 @dynamic name;
 @dynamic package_name;
 @dynamic phone;
+@dynamic birthday;
+@dynamic job;
+@dynamic email;
 @dynamic accounts;
 @dynamic services;
 

@@ -16,8 +16,7 @@
 #import "LBHomeFooterSection.h"
 #import "LBHomeHeaderSection.h"
 #import "LBCenterBarItemView.h"
-#import "LBViewInteractive.h"
-#import "LBSlideLeftAnimator.h"
+
 
 
 @interface LBHomeViewController ()
@@ -26,9 +25,6 @@
 @property(nonatomic)NSMutableArray *cus_accounts;
 @property (nonatomic, strong) LBHomeTableCellAutoLayout *prototypeCell;
 @property(nonatomic)LBCenterBarItemView *_navbarCenterView;
-
-@property(nonatomic) LBViewInteractive *presentInteractor;
-@property(nonatomic) LBViewInteractive *dismissInteractor;
 
 @end
 
@@ -69,12 +65,12 @@ int const spaceBetweenSections = 20;
 }
 
 
-
+#pragma mark - viewController handler
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //TODO: Initialize table view
-    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
@@ -91,6 +87,11 @@ int const spaceBetweenSections = 20;
     headerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), [LBHomeHeaderView heightForHeaderView]);
     headerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _tableView.tableHeaderView = headerView;
+    
+    UITapGestureRecognizer *tapGestureOnAvatar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnAvatar:)];
+    tapGestureOnAvatar.numberOfTapsRequired = 1;
+    tapGestureOnAvatar.numberOfTouchesRequired = 1;
+    [headerView.cusAvatarImageView addGestureRecognizer:tapGestureOnAvatar];
     
     //register class for tableCell
     [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LBHomeTableCellAutoLayout class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([LBHomeTableCellAutoLayout class])];
@@ -119,15 +120,15 @@ int const spaceBetweenSections = 20;
     self.navigationItem.titleView = navbarCenterView;
     [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
     
+    //TODO: add left navigationBarItem
+    UIImage *menuButtomImage = [UIImage imageNamed:@"menu-button.png"];
+    UIBarButtonItem *leftbarButtomItem = [[UIBarButtonItem alloc] initWithImage:menuButtomImage style:UIBarButtonItemStylePlain target:self action:(@selector(tapOnMenuButtomItem:))];
+    self.navigationItem.leftBarButtonItem = leftbarButtomItem;
     
-    //TODO: set up Interactive Transition for Slide Menu
-    self.disableInteractivePlayerTransitioning = NO;
-    self.presentInteractor = [[LBViewInteractive alloc] init];
-    [self.presentInteractor attachToViewController:self withView:self.view presentedViewController:self.slideMenuViewController panGestureType:PanGesTureTypeBasic];
- //   ((UIScreenEdgePanGestureRecognizer*)self.presentInteractor.panGesture).edges = UIRectEdgeLeft;
-    
-    self.dismissInteractor = [[LBViewInteractive alloc] init];
-    [self.dismissInteractor attachToViewController:self.slideMenuViewController withView:self.slideMenuViewController.view presentedViewController:nil panGestureType:PanGesTureTypeBasic];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self.tableView reloadData];
+    });
 }
 
 
@@ -176,7 +177,6 @@ int const spaceBetweenSections = 20;
 
 -(void)viewDidLayoutSubviews {
     
-    //[super viewDidLayoutSubviews];
     self.navigationController.view.frame = [UIScreen mainScreen].bounds;
     self.view.frame = [UIScreen mainScreen].bounds;
     
@@ -200,22 +200,8 @@ int const spaceBetweenSections = 20;
     
     [navbarCenterView setNeedsUpdateConstraints];
     [navbarCenterView updateConstraintsIfNeeded];
-    
-
-    
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [self.tableView reloadData];
-    });
-    
-    //let table view underlap navigation bar
-    //[_tableView setContentOffset:CGPointMake(0, 0)];
-}
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
@@ -223,6 +209,17 @@ int const spaceBetweenSections = 20;
         
         [self.tableView reloadData];
     });
+}
+
+-(void)tapOnMenuButtomItem:(id)sender {
+    
+    [self.presenterDelegate presentSlideMenuViewController];
+}
+
+
+-(void)tapOnAvatar:(UITapGestureRecognizer*)gesture {
+    
+    [self.presenterDelegate showCusInfoViewController];
 }
 
 #pragma mark - TableView
@@ -316,6 +313,41 @@ int const spaceBetweenSections = 20;
     return size.height;
 }
 
+/*
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    [self.dateTimePopover8 setPermittedArrowDirections:UIPopoverArrowDirectionUnknown];
+    
+    
+    LBSlideMenuViewController *destNav = _slideMenuViewController;
+    _slideMenuViewController.preferredContentSize = CGSizeMake(280,200);
+    destNav.modalPresentationStyle = UIModalPresentationPopover;
+    
+    
+    
+    
+    _dateTimePopover8 = destNav.popoverPresentationController;
+    _dateTimePopover8.delegate = self;
+    _dateTimePopover8.sourceView = self.view;
+    
+    CGRect rectCellInTableView = [self.tableView rectForRowAtIndexPath:indexPath];
+    CGRect rectCellInSuperView = [self.tableView convertRect:rectCellInTableView toView:self.view];
+    
+    CGRect frame = rectCellInSuperView;
+    frame.origin.y = frame.origin.y+20;
+    _dateTimePopover8.sourceRect = frame;
+    //destNav.navigationBarHidden = YES;
+    [self presentViewController:destNav animated:YES completion:nil];
+}
+ 
+ */
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    
+    return UIModalPresentationNone;
+}
 
 #pragma mark - LBHomeViewControllerDelegate
 -(void)gotCustomerInfo:(LBCustomer *)customer {
@@ -332,44 +364,13 @@ int const spaceBetweenSections = 20;
 }
 
 
-#pragma mark - UIViewControllerTransitioningDelegate
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+-(void)updateBackgroundImage:(UIImage *)backgroundImg {
     
-    LBSlideLeftAnimator *animator = [[LBSlideLeftAnimator alloc] init];
-    animator.transitionType = ModalAnimatedTransitioningTypePresent;
-    
-    return animator;
+    LBHomeHeaderView *headerView = (LBHomeHeaderView*)self.tableView.tableHeaderView;
+    [headerView.backgroundImageView setImage:backgroundImg];
 }
 
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    
-    LBSlideLeftAnimator *animator = [[LBSlideLeftAnimator alloc] init];
-    animator.transitionType = ModalAnimatedTransitioningTypeDismiss;
-    
-    return animator;
-}
 
--(id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    
-    if (!self.disableInteractivePlayerTransitioning) {
-        
-        NSLog(@"presented VC is %@", self.presentedViewController);
-        
-        return self.presentInteractor;
-    }
-    
-    return nil;
-}
-
--(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    
-    if (!self.disableInteractivePlayerTransitioning) {
-        
-        return self.dismissInteractor;
-    }
-    
-    return nil;
-}
 
 
 

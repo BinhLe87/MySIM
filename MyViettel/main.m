@@ -13,8 +13,8 @@
 
 int main(int argc, char * argv[]) {
     
-    [[FBAllocationTrackerManager sharedManager] startTrackingAllocations];
-    [[FBAllocationTrackerManager sharedManager] enableGenerations];
+    /*[[FBAllocationTrackerManager sharedManager] startTrackingAllocations];
+    [[FBAllocationTrackerManager sharedManager] enableGenerations];*/
     
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

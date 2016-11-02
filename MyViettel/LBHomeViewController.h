@@ -22,12 +22,11 @@ extern int const marginRightSection;
 extern int const spaceBetweenSections;
 extern int const tableViewBackgroundColor;
 
-@interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, LBHomeViewControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
+@interface LBHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, LBHomeViewControllerDelegate, UINavigationControllerDelegate>
 
 @property(nonatomic) UITableView *tableView;
 @property(nonatomic) id<LBHomePresenterDelegate> presenterDelegate;
 
-@property(nonatomic) LBSlideMenuViewController *slideMenuViewController;
-@property(nonatomic) BOOL disableInteractivePlayerTransitioning;
+
 
 @end

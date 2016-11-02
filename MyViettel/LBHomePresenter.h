@@ -16,5 +16,6 @@
 
 @property(nonatomic, weak) id<LBHomeViewControllerDelegate> homeVCDelegate;
 @property(nonatomic) LBHomeInteractor *homeInteractor;
+@property(nonatomic, weak) id<LBHomeRouterDelegate> homeRouterDelegate;
 
 @end

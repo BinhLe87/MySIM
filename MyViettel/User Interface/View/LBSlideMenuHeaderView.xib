@@ -23,27 +23,27 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5vi-DY-Acq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzP-na-ymE">
-                    <rect key="frame" x="17" y="215" width="50" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kzP-na-ymE">
+                    <rect key="frame" x="15" y="205" width="70" height="70"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="4Ng-nz-T9E"/>
                         <constraint firstAttribute="height" constant="70" id="igf-Xt-hFE"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfL-4h-gEr">
-                    <rect key="frame" x="95" y="213" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfL-4h-gEr">
+                    <rect key="frame" x="95" y="213" width="50" height="23"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe1-4W-iem">
-                    <rect key="frame" x="95" y="246" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe1-4W-iem">
+                    <rect key="frame" x="95" y="247" width="42" height="20"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="camera_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-23-kGj">
-                    <rect key="frame" x="280" y="8" width="32" height="22"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-23-kGj">
+                    <rect key="frame" x="278" y="473" width="32" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="TLu-KF-GIw"/>
                         <constraint firstAttribute="width" constant="32" id="pGr-47-Vuq"/>
@@ -54,24 +54,18 @@
             <constraints>
                 <constraint firstItem="Xe1-4W-iem" firstAttribute="leading" secondItem="kzP-na-ymE" secondAttribute="trailing" constant="10" id="BQJ-vU-0SM"/>
                 <constraint firstItem="wfL-4h-gEr" firstAttribute="top" secondItem="kzP-na-ymE" secondAttribute="top" constant="8" id="EBh-6L-NfY"/>
-                <constraint firstAttribute="trailing" secondItem="2y3-23-kGj" secondAttribute="trailing" constant="10" id="EMi-Os-gJ4"/>
+                <constraint firstAttribute="trailing" secondItem="2y3-23-kGj" secondAttribute="trailing" constant="10" placeholder="YES" id="EMi-Os-gJ4"/>
                 <constraint firstItem="Xe1-4W-iem" firstAttribute="bottom" secondItem="kzP-na-ymE" secondAttribute="bottom" constant="-8" id="GtF-jg-yks"/>
                 <constraint firstItem="kzP-na-ymE" firstAttribute="leading" secondItem="E1d-cu-MTX" secondAttribute="leading" constant="15" id="X6C-Fs-NY8"/>
                 <constraint firstItem="kzP-na-ymE" firstAttribute="centerY" secondItem="E1d-cu-MTX" secondAttribute="centerY" id="Y1a-dV-mLo"/>
                 <constraint firstItem="wfL-4h-gEr" firstAttribute="leading" secondItem="kzP-na-ymE" secondAttribute="trailing" constant="10" id="dLs-mw-L9l"/>
                 <constraint firstAttribute="bottom" secondItem="5vi-DY-Acq" secondAttribute="bottom" id="l1Y-gD-2gd"/>
                 <constraint firstItem="5vi-DY-Acq" firstAttribute="top" secondItem="E1d-cu-MTX" secondAttribute="top" id="lmA-hL-nO2"/>
-                <constraint firstItem="2y3-23-kGj" firstAttribute="top" secondItem="E1d-cu-MTX" secondAttribute="top" constant="15" id="obn-4L-2LQ"/>
+                <constraint firstItem="2y3-23-kGj" firstAttribute="bottom" secondItem="E1d-cu-MTX" secondAttribute="bottom" constant="15" placeholder="YES" id="obn-4L-2LQ"/>
                 <constraint firstItem="5vi-DY-Acq" firstAttribute="leading" secondItem="E1d-cu-MTX" secondAttribute="leading" id="pzX-7g-aEx"/>
                 <constraint firstAttribute="trailing" secondItem="5vi-DY-Acq" secondAttribute="trailing" id="zZX-9H-Rcs"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="EMi-Os-gJ4"/>
-                    <exclude reference="obn-4L-2LQ"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="382" y="113"/>
         </view>
     </objects>

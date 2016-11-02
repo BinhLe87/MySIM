@@ -414,7 +414,7 @@
 		AB2E7CE11DB61F770035520E /* zoom-in.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2E7B631DB61F770035520E /* zoom-in.png */; };
 		AB2E7CE21DB61F770035520E /* zoom-out.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2E7B641DB61F770035520E /* zoom-out.png */; };
 		AB2E7CE51DB61FC50035520E /* LBSlideMenuPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E7CE41DB61FC50035520E /* LBSlideMenuPresenter.m */; };
-		AB2E7CEB1DB6292C0035520E /* LBMyViettelRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E7CEA1DB6292C0035520E /* LBMyViettelRootViewController.m */; };
+		AB2E7CEB1DB6292C0035520E /* LBRootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E7CEA1DB6292C0035520E /* LBRootRouter.m */; };
 		AB2E7CEE1DB62C4C0035520E /* LBMyViettelDependencies.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E7CED1DB62C4C0035520E /* LBMyViettelDependencies.m */; };
 		AB2E7CF11DB62E2C0035520E /* LBSlideMenuRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2E7CF01DB62E2C0035520E /* LBSlideMenuRouter.m */; };
 		AB4A3EF91DBBB6C800C15A1E /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4A3EF21DBBB6C300C15A1E /* libMagicalRecord.a */; };
@@ -478,8 +478,23 @@
 		AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5967FE1DB8AF9500191AB6 /* LBCustomer.m */; };
 		AB5968091DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5968001DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m */; };
 		AB59680A1DB8AF9500191AB6 /* LBServiceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */; };
-		AB7CA70D1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA70C1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m */; };
+		AB5DC4001DC98F5100255072 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5DC3FF1DC98F5100255072 /* left-arrow.png */; };
+		AB5DC4041DC9972200255072 /* LBMenuPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5DC4031DC9972200255072 /* LBMenuPopoverViewController.m */; };
+		AB7CA70D1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA70C1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m */; };
 		AB7CA7181DBF425F00B45D2C /* LBHomeInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA7171DBF425F00B45D2C /* LBHomeInteractor.m */; };
+		AB8217F41DC82994008CBCFA /* LBCusInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8217F21DC82994008CBCFA /* LBCusInfoViewController.m */; };
+		AB8217F51DC82994008CBCFA /* LBCusInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8217F31DC82994008CBCFA /* LBCusInfoViewController.xib */; };
+		AB8218001DC82EF6008CBCFA /* ic_next_black.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8217FE1DC82EF6008CBCFA /* ic_next_black.png */; };
+		AB8218011DC82EF6008CBCFA /* ic_next_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8217FF1DC82EF6008CBCFA /* ic_next_black@2x.png */; };
+		AB8218071DC84216008CBCFA /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218021DC84216008CBCFA /* back@2x.png */; };
+		AB8218081DC84216008CBCFA /* ic_collapse.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218031DC84216008CBCFA /* ic_collapse.png */; };
+		AB8218091DC84216008CBCFA /* ic_collapse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218041DC84216008CBCFA /* ic_collapse@2x.png */; };
+		AB82180A1DC84216008CBCFA /* ic_see_more.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218051DC84216008CBCFA /* ic_see_more.png */; };
+		AB82180B1DC84216008CBCFA /* ic_see_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218061DC84216008CBCFA /* ic_see_more@2x.png */; };
+		AB82180E1DC845B3008CBCFA /* LBCusInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB82180D1DC845B3008CBCFA /* LBCusInfoRouter.m */; };
+		AB8218111DC84708008CBCFA /* LBCusInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8218101DC84708008CBCFA /* LBCusInfoPresenter.m */; };
+		ABB11D9E1DC7386B0031562F /* LBDataStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB11D9D1DC7386B0031562F /* LBDataStoreManager.m */; };
+		ABB11DA21DC751360031562F /* LBCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB11DA11DC751360031562F /* LBCoreDataManager.m */; };
 		ABE2852B1DB776D9007A412F /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852A1DB776D9007A412F /* LBHomeViewController.m */; };
 		ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852D1DB7783C007A412F /* LBHomeHeaderView.m */; };
 		ABE285301DB77850007A412F /* LBHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE2852F1DB77850007A412F /* LBHomeHeaderView.xib */; };
@@ -1007,8 +1022,8 @@
 		AB2E7CE31DB61FC50035520E /* LBSlideMenuPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSlideMenuPresenter.h; sourceTree = "<group>"; };
 		AB2E7CE41DB61FC50035520E /* LBSlideMenuPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSlideMenuPresenter.m; sourceTree = "<group>"; };
 		AB2E7CE61DB621E20035520E /* LBSlideMenuInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSlideMenuInterface.h; sourceTree = "<group>"; };
-		AB2E7CE91DB6292C0035520E /* LBMyViettelRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMyViettelRootViewController.h; sourceTree = "<group>"; };
-		AB2E7CEA1DB6292C0035520E /* LBMyViettelRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMyViettelRootViewController.m; sourceTree = "<group>"; };
+		AB2E7CE91DB6292C0035520E /* LBRootRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRootRouter.h; sourceTree = "<group>"; };
+		AB2E7CEA1DB6292C0035520E /* LBRootRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRootRouter.m; sourceTree = "<group>"; };
 		AB2E7CEC1DB62C4C0035520E /* LBMyViettelDependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMyViettelDependencies.h; sourceTree = "<group>"; };
 		AB2E7CED1DB62C4C0035520E /* LBMyViettelDependencies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMyViettelDependencies.m; sourceTree = "<group>"; };
 		AB2E7CEF1DB62E2C0035520E /* LBSlideMenuRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSlideMenuRouter.h; sourceTree = "<group>"; };
@@ -1120,13 +1135,35 @@
 		AB5968021DB8AF9500191AB6 /* LBServiceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBServiceDetails.m; sourceTree = "<group>"; };
 		AB5968671DB8B16400191AB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AB5968891DB8B9C400191AB6 /* LBHomeInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeInterface.h; sourceTree = "<group>"; };
-		AB7CA70B1DBF3ABC00B45D2C /* LBHomeCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeCoreDataManager.h; sourceTree = "<group>"; };
-		AB7CA70C1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeCoreDataManager.m; sourceTree = "<group>"; };
+		AB5DC3FF1DC98F5100255072 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
+		AB5DC4021DC9972200255072 /* LBMenuPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMenuPopoverViewController.h; sourceTree = "<group>"; };
+		AB5DC4031DC9972200255072 /* LBMenuPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBMenuPopoverViewController.m; sourceTree = "<group>"; };
+		AB7CA70C1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LBCoreDataManager+Customer.m"; sourceTree = "<group>"; };
 		AB7CA7161DBF425F00B45D2C /* LBHomeInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeInteractor.h; sourceTree = "<group>"; };
 		AB7CA7171DBF425F00B45D2C /* LBHomeInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeInteractor.m; sourceTree = "<group>"; };
 		AB7D93901DC4446F00BBB100 /* libFBMemoryProfiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBMemoryProfiler.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MyViettel-fmkjdduugbtxgyfuricihwbuxzjs/Build/Products/Debug-iphonesimulator/libFBMemoryProfiler.a"; sourceTree = "<group>"; };
 		AB7D939A1DC4447200BBB100 /* libFBAllocationTracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBAllocationTracker.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MyViettel-fmkjdduugbtxgyfuricihwbuxzjs/Build/Products/Debug-iphonesimulator/libFBAllocationTracker.a"; sourceTree = "<group>"; };
 		AB7D939C1DC4447500BBB100 /* libFBRetainCycleDetector.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBRetainCycleDetector.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MyViettel-fmkjdduugbtxgyfuricihwbuxzjs/Build/Products/Debug-iphonesimulator/libFBRetainCycleDetector.a"; sourceTree = "<group>"; };
+		AB8217F11DC82994008CBCFA /* LBCusInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoViewController.h; sourceTree = "<group>"; };
+		AB8217F21DC82994008CBCFA /* LBCusInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoViewController.m; sourceTree = "<group>"; };
+		AB8217F31DC82994008CBCFA /* LBCusInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBCusInfoViewController.xib; sourceTree = "<group>"; };
+		AB8217FE1DC82EF6008CBCFA /* ic_next_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_next_black.png; sourceTree = "<group>"; };
+		AB8217FF1DC82EF6008CBCFA /* ic_next_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_next_black@2x.png"; sourceTree = "<group>"; };
+		AB8218021DC84216008CBCFA /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		AB8218031DC84216008CBCFA /* ic_collapse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_collapse.png; sourceTree = "<group>"; };
+		AB8218041DC84216008CBCFA /* ic_collapse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_collapse@2x.png"; sourceTree = "<group>"; };
+		AB8218051DC84216008CBCFA /* ic_see_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_see_more.png; sourceTree = "<group>"; };
+		AB8218061DC84216008CBCFA /* ic_see_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_see_more@2x.png"; sourceTree = "<group>"; };
+		AB82180C1DC845B3008CBCFA /* LBCusInfoRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoRouter.h; sourceTree = "<group>"; };
+		AB82180D1DC845B3008CBCFA /* LBCusInfoRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoRouter.m; sourceTree = "<group>"; };
+		AB82180F1DC84708008CBCFA /* LBCusInfoPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoPresenter.h; sourceTree = "<group>"; };
+		AB8218101DC84708008CBCFA /* LBCusInfoPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoPresenter.m; sourceTree = "<group>"; };
+		AB8218121DC85535008CBCFA /* LBCusInfoInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoInterface.h; sourceTree = "<group>"; };
+		ABB11D9A1DC72F2D0031562F /* LBCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBCoreDataManager.h; sourceTree = "<group>"; };
+		ABB11D9B1DC72FD30031562F /* LBCoreDataManager+Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBCoreDataManager+Customer.h"; sourceTree = "<group>"; };
+		ABB11D9C1DC7386B0031562F /* LBDataStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDataStoreManager.h; sourceTree = "<group>"; };
+		ABB11D9D1DC7386B0031562F /* LBDataStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDataStoreManager.m; sourceTree = "<group>"; };
+		ABB11DA11DC751360031562F /* LBCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCoreDataManager.m; sourceTree = "<group>"; };
 		ABE285291DB776D9007A412F /* LBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeViewController.h; sourceTree = "<group>"; };
 		ABE2852A1DB776D9007A412F /* LBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewController.m; sourceTree = "<group>"; };
 		ABE2852C1DB7783C007A412F /* LBHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHomeHeaderView.h; sourceTree = "<group>"; };
@@ -1257,6 +1294,7 @@
 		AB2E79641DB6031A0035520E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABB11D871DC72B340031562F /* CusInfo */,
 				AB2E79781DB6084E0035520E /* SlideMenu */,
 				AB2E79651DB603240035520E /* Home */,
 			);
@@ -1291,13 +1329,6 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
-		AB2E79681DB603410035520E /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Entity;
-			sourceTree = "<group>";
-		};
 		AB2E79691DB603450035520E /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1328,20 +1359,9 @@
 		AB2E796C1DB603C50035520E /* Application logic */ = {
 			isa = PBXGroup;
 			children = (
-				AB2E796D1DB603E80035520E /* Data Stores */,
 				AB2E79661DB6032D0035520E /* Interactor */,
-				AB2E79681DB603410035520E /* Entity */,
 			);
 			name = "Application logic";
-			sourceTree = "<group>";
-		};
-		AB2E796D1DB603E80035520E /* Data Stores */ = {
-			isa = PBXGroup;
-			children = (
-				AB7CA70B1DBF3ABC00B45D2C /* LBHomeCoreDataManager.h */,
-				AB7CA70C1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m */,
-			);
-			name = "Data Stores";
 			sourceTree = "<group>";
 		};
 		AB2E796E1DB603F80035520E /* Libs */ = {
@@ -1406,9 +1426,10 @@
 		AB2E79741DB6046C0035520E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB5DC4011DC996E600255072 /* MenuPopover */,
 				AB09587F1DC3476000F8F420 /* ViewAnimationTransition */,
-				AB2E7CE91DB6292C0035520E /* LBMyViettelRootViewController.h */,
-				AB2E7CEA1DB6292C0035520E /* LBMyViettelRootViewController.m */,
+				AB2E7CE91DB6292C0035520E /* LBRootRouter.h */,
+				AB2E7CEA1DB6292C0035520E /* LBRootRouter.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1425,8 +1446,10 @@
 		AB2E79761DB604780035520E /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				AB5967F21DB8AEE700191AB6 /* Entities */,
+				ABB11D991DC72E150031562F /* CoreData Store */,
 				AB5967ED1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld */,
+				ABB11D9C1DC7386B0031562F /* LBDataStoreManager.h */,
+				ABB11D9D1DC7386B0031562F /* LBDataStoreManager.m */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -1530,6 +1553,14 @@
 		AB2E79E61DB61D3E0035520E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AB5DC3FF1DC98F5100255072 /* left-arrow.png */,
+				AB8218021DC84216008CBCFA /* back@2x.png */,
+				AB8218031DC84216008CBCFA /* ic_collapse.png */,
+				AB8218041DC84216008CBCFA /* ic_collapse@2x.png */,
+				AB8218051DC84216008CBCFA /* ic_see_more.png */,
+				AB8218061DC84216008CBCFA /* ic_see_more@2x.png */,
+				AB8217FE1DC82EF6008CBCFA /* ic_next_black.png */,
+				AB8217FF1DC82EF6008CBCFA /* ic_next_black@2x.png */,
 				AB581ADE1DB76B3C00D546C0 /* camera_white.png */,
 				AB581AA01DB7223D00D546C0 /* camera_1.png */,
 				AB581A9E1DB721FC00D546C0 /* camera.jpg */,
@@ -2084,6 +2115,109 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		AB5DC4011DC996E600255072 /* MenuPopover */ = {
+			isa = PBXGroup;
+			children = (
+				AB5DC4021DC9972200255072 /* LBMenuPopoverViewController.h */,
+				AB5DC4031DC9972200255072 /* LBMenuPopoverViewController.m */,
+			);
+			name = MenuPopover;
+			sourceTree = "<group>";
+		};
+		ABB11D871DC72B340031562F /* CusInfo */ = {
+			isa = PBXGroup;
+			children = (
+				ABB11D901DC72C5C0031562F /* Application logic */,
+				ABB11D941DC72C5C0031562F /* Module Interface */,
+				ABB11D951DC72C5C0031562F /* User Interface */,
+			);
+			name = CusInfo;
+			sourceTree = "<group>";
+		};
+		ABB11D901DC72C5C0031562F /* Application logic */ = {
+			isa = PBXGroup;
+			children = (
+				ABB11D921DC72C5C0031562F /* Interactor */,
+				ABB11D931DC72C5C0031562F /* Manager */,
+			);
+			name = "Application logic";
+			path = "../../Practices/Xcode Project Structure/Classes/Modules/Home/Application logic";
+			sourceTree = "<group>";
+		};
+		ABB11D921DC72C5C0031562F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ABB11D931DC72C5C0031562F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		ABB11D941DC72C5C0031562F /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				AB8218121DC85535008CBCFA /* LBCusInfoInterface.h */,
+			);
+			name = "Module Interface";
+			path = "../../Practices/Xcode Project Structure/Classes/Modules/Home/Module Interface";
+			sourceTree = "<group>";
+		};
+		ABB11D951DC72C5C0031562F /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				ABB11D961DC72C5C0031562F /* Presenter */,
+				ABB11D971DC72C5C0031562F /* Router */,
+				ABB11D981DC72C5C0031562F /* View */,
+			);
+			name = "User Interface";
+			path = "../../Practices/Xcode Project Structure/Classes/Modules/Home/User Interface";
+			sourceTree = "<group>";
+		};
+		ABB11D961DC72C5C0031562F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB82180F1DC84708008CBCFA /* LBCusInfoPresenter.h */,
+				AB8218101DC84708008CBCFA /* LBCusInfoPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ABB11D971DC72C5C0031562F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB82180C1DC845B3008CBCFA /* LBCusInfoRouter.h */,
+				AB82180D1DC845B3008CBCFA /* LBCusInfoRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		ABB11D981DC72C5C0031562F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB8217F11DC82994008CBCFA /* LBCusInfoViewController.h */,
+				AB8217F21DC82994008CBCFA /* LBCusInfoViewController.m */,
+				AB8217F31DC82994008CBCFA /* LBCusInfoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABB11D991DC72E150031562F /* CoreData Store */ = {
+			isa = PBXGroup;
+			children = (
+				AB5967F21DB8AEE700191AB6 /* Entities */,
+				ABB11D9B1DC72FD30031562F /* LBCoreDataManager+Customer.h */,
+				AB7CA70C1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m */,
+				ABB11D9A1DC72F2D0031562F /* LBCoreDataManager.h */,
+				ABB11DA11DC751360031562F /* LBCoreDataManager.m */,
+			);
+			name = "CoreData Store";
+			sourceTree = "<group>";
+		};
 		ABEFD3331DC08B5700D94BF9 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2249,6 +2383,7 @@
 				AB2E7BE01DB61F770035520E /* folder-10.png in Resources */,
 				AB2E7BA51DB61F770035520E /* compose.png in Resources */,
 				AB2E7BFE1DB61F770035520E /* id-card-3.png in Resources */,
+				AB8218081DC84216008CBCFA /* ic_collapse.png in Resources */,
 				AB2E7C961DB61F770035520E /* speaker-2.png in Resources */,
 				AB2E7C7F1DB61F770035520E /* settings.png in Resources */,
 				AB2E7B981DB61F770035520E /* close.png in Resources */,
@@ -2322,6 +2457,7 @@
 				AB2E79591DB602E40035520E /* Assets.xcassets in Resources */,
 				AB2E7C5E1DB61F770035520E /* plus.png in Resources */,
 				AB2E7C0E1DB61F770035520E /* link.png in Resources */,
+				AB8218001DC82EF6008CBCFA /* ic_next_black.png in Resources */,
 				AB2E7B891DB61F770035520E /* broken-link.png in Resources */,
 				AB2E7C291DB61F770035520E /* menu.png in Resources */,
 				AB2E7BED1DB61F770035520E /* garbage-1.png in Resources */,
@@ -2371,6 +2507,7 @@
 				AB2E7BA91DB61F770035520E /* controls-4.png in Resources */,
 				AB2E7B901DB61F770035520E /* calendar-5.png in Resources */,
 				AB2E7B951DB61F770035520E /* checked.png in Resources */,
+				AB8218071DC84216008CBCFA /* back@2x.png in Resources */,
 				AB2E7BE81DB61F770035520E /* folder-18.png in Resources */,
 				AB2E7BD41DB61F770035520E /* flag-4.png in Resources */,
 				AB2E7CC61DB61F770035520E /* user-5.png in Resources */,
@@ -2414,6 +2551,7 @@
 				AB581A9B1DB71DAE00D546C0 /* avatar.png in Resources */,
 				AB2E7C601DB61F770035520E /* previous.png in Resources */,
 				AB2E7C651DB61F770035520E /* reading.png in Resources */,
+				AB5DC4001DC98F5100255072 /* left-arrow.png in Resources */,
 				AB2E7CDE1DB61F770035520E /* wireless-internet.png in Resources */,
 				AB2E7CCD1DB61F770035520E /* video-camera.png in Resources */,
 				AB2E7C1A1DB61F770035520E /* login.png in Resources */,
@@ -2421,6 +2559,7 @@
 				AB2E7BFB1DB61F770035520E /* house.png in Resources */,
 				AB2E7CC21DB61F770035520E /* user-1.png in Resources */,
 				AB2E7C771DB61F770035520E /* settings-2.png in Resources */,
+				AB82180B1DC84216008CBCFA /* ic_see_more@2x.png in Resources */,
 				AB2E7BB21DB61F770035520E /* database-3.png in Resources */,
 				AB2E7CB41DB61F770035520E /* switch.png in Resources */,
 				AB2E7BBC1DB61F770035520E /* download.png in Resources */,
@@ -2447,6 +2586,7 @@
 				AB2E7C1E1DB61F770035520E /* magnet.png in Resources */,
 				AB2E7BD21DB61F770035520E /* flag-2.png in Resources */,
 				AB2E7C951DB61F770035520E /* speaker-1.png in Resources */,
+				AB8218011DC82EF6008CBCFA /* ic_next_black@2x.png in Resources */,
 				AB2E7CA01DB61F770035520E /* star.png in Resources */,
 				AB2E7BCC1DB61F770035520E /* file-1.png in Resources */,
 				AB2E7CAF1DB61F770035520E /* switch-3.png in Resources */,
@@ -2472,6 +2612,7 @@
 				AB2E7BA41DB61F770035520E /* compass.png in Resources */,
 				AB2E7C161DB61F770035520E /* locked-4.png in Resources */,
 				AB2E7BC31DB61F770035520E /* equal.png in Resources */,
+				AB8218091DC84216008CBCFA /* ic_collapse@2x.png in Resources */,
 				AB2E7C7A1DB61F770035520E /* settings-5.png in Resources */,
 				AB2E7C551DB61F770035520E /* picture.png in Resources */,
 				AB2E7CC11DB61F770035520E /* upload.png in Resources */,
@@ -2519,6 +2660,7 @@
 				AB581B221DB76C7100D546C0 /* leftMenu.jpg in Resources */,
 				AB581A921DB707C300D546C0 /* LBSlideMenuHeaderView.xib in Resources */,
 				AB2E7B8A1DB61F770035520E /* calculator-1.png in Resources */,
+				AB8217F51DC82994008CBCFA /* LBCusInfoViewController.xib in Resources */,
 				AB2E7C7E1DB61F770035520E /* settings-9.png in Resources */,
 				AB2E7C631DB61F770035520E /* push-pin.png in Resources */,
 				AB2E7C891DB61F770035520E /* smartphone-1.png in Resources */,
@@ -2543,6 +2685,7 @@
 				AB2E7C5A1DB61F770035520E /* placeholder.png in Resources */,
 				AB2E7CAC1DB61F770035520E /* success.png in Resources */,
 				AB2E7C3D1DB61F770035520E /* next.png in Resources */,
+				AB82180A1DC84216008CBCFA /* ic_see_more.png in Resources */,
 				AB2E7C901DB61F770035520E /* smartphone-8.png in Resources */,
 				AB2E7C151DB61F770035520E /* locked-3.png in Resources */,
 				AB2E7B6F1DB61F770035520E /* alarm.png in Resources */,
@@ -2711,6 +2854,7 @@
 				AB2E79DE1DB618B30035520E /* MASConstraintMaker.m in Sources */,
 				AB5968061DB8AF9500191AB6 /* LBAccount.m in Sources */,
 				ABE2852B1DB776D9007A412F /* LBHomeViewController.m in Sources */,
+				ABB11D9E1DC7386B0031562F /* LBDataStoreManager.m in Sources */,
 				AB5968031DB8AF9500191AB6 /* LBService+CoreDataProperties.m in Sources */,
 				AB5968041DB8AF9500191AB6 /* LBService.m in Sources */,
 				AB581ACA1DB756FA00D546C0 /* MKAnnotationView+WebCache.m in Sources */,
@@ -2732,12 +2876,14 @@
 				AB0958761DC32C4200F8F420 /* LBViewInteractive.m in Sources */,
 				AB5967EF1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld in Sources */,
 				AB581AA71DB72F9200D546C0 /* LBSlideMenuChooseBackgroundTableViewCell.m in Sources */,
+				AB82180E1DC845B3008CBCFA /* LBCusInfoRouter.m in Sources */,
 				AB581AD81DB756FA00D546C0 /* UIImageView+WebCache.m in Sources */,
 				AB5968051DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m in Sources */,
 				AB581AD31DB756FA00D546C0 /* UIButton+WebCache.m in Sources */,
 				AB581B1C1DB76C7100D546C0 /* LeftMenuViewController.m in Sources */,
 				AB5968071DB8AF9500191AB6 /* LBCustomer+CoreDataProperties.m in Sources */,
 				AB2E79E21DB618B30035520E /* NSArray+MASAdditions.m in Sources */,
+				ABB11DA21DC751360031562F /* LBCoreDataManager.m in Sources */,
 				AB581AA41DB723FC00D546C0 /* LBSlideMenuChooseBackgroundTableViewController.m in Sources */,
 				ABF667401DBB184500F5353D /* LBHomeTableCellAutoLayout.m in Sources */,
 				AB581B1F1DB76C7100D546C0 /* RightMenuViewController.m in Sources */,
@@ -2746,6 +2892,7 @@
 				AB22C3DE1DBA75A500519A98 /* LBHomeHeaderSection.m in Sources */,
 				AB2E7CF11DB62E2C0035520E /* LBSlideMenuRouter.m in Sources */,
 				AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */,
+				AB8217F41DC82994008CBCFA /* LBCusInfoViewController.m in Sources */,
 				AB0958861DC349E300F8F420 /* MustOverride.m in Sources */,
 				AB581B2A1DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				AB581B1B1DB76C7100D546C0 /* HomeViewController.m in Sources */,
@@ -2754,6 +2901,7 @@
 				AB581AD01DB756FA00D546C0 /* SDWebImageDownloaderOperation.m in Sources */,
 				AB581A951DB7081E00D546C0 /* LBSlideMenuHeaderView.m in Sources */,
 				AB2E79E41DB618B30035520E /* View+MASAdditions.m in Sources */,
+				AB5DC4041DC9972200255072 /* LBMenuPopoverViewController.m in Sources */,
 				AB581AD21DB756FA00D546C0 /* SDWebImagePrefetcher.m in Sources */,
 				AB7CA7181DBF425F00B45D2C /* LBHomeInteractor.m in Sources */,
 				AB581AD61DB756FA00D546C0 /* UIImage+WebP.m in Sources */,
@@ -2762,15 +2910,16 @@
 				AB581B281DB76C7100D546C0 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				AB581ACB1DB756FA00D546C0 /* NSData+ImageContentType.m in Sources */,
 				ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */,
-				AB7CA70D1DBF3ABC00B45D2C /* LBHomeCoreDataManager.m in Sources */,
+				AB7CA70D1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m in Sources */,
 				AB2E794E1DB602E40035520E /* main.m in Sources */,
+				AB8218111DC84708008CBCFA /* LBCusInfoPresenter.m in Sources */,
 				AB2E798B1DB611490035520E /* LBSideMenuTableViewCell.m in Sources */,
 				AB5967EC1DB8A9F900191AB6 /* LBHomePresenter.m in Sources */,
 				AB581B291DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				AB2E7CEE1DB62C4C0035520E /* LBMyViettelDependencies.m in Sources */,
 				AB2E79DC1DB618B30035520E /* MASCompositeConstraint.m in Sources */,
 				ABEFD33E1DC08BAD00D94BF9 /* LBCenterBarItemView.m in Sources */,
-				AB2E7CEB1DB6292C0035520E /* LBMyViettelRootViewController.m in Sources */,
+				AB2E7CEB1DB6292C0035520E /* LBRootRouter.m in Sources */,
 				AB581AD91DB756FA00D546C0 /* UIView+WebCacheOperation.m in Sources */,
 				AB581B1D1DB76C7100D546C0 /* ProfileDetailViewController.m in Sources */,
 				AB1CA0B71DC1ABA400D33F49 /* LBMyViettelConstants.m in Sources */,

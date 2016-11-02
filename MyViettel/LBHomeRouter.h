@@ -7,19 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LBHomeViewController.h"
-#import "LBMyViettelRootViewController.h"
+
+#import "LBRootRouter.h"
 #import "LBHomePresenter.h"
-#import "LBSlideMenuViewController.h"
+#import "LBHomeInterface.h"
+#import "LBSlideMenuRouter.h"
+#import "LBCusInfoRouter.h"
 
-@interface LBHomeRouter : NSObject
+@interface LBHomeRouter : NSObject <LBHomeRouterDelegate>
 
-@property(nonatomic)LBHomeViewController *homeViewController;
-@property(nonatomic)LBSlideMenuViewController *slideMenuViewController;
-@property(nonatomic)LBMyViettelRootViewController *rootViewController;
-
+@property(nonatomic) LBRootRouter *rootRouter;
 @property(nonatomic) LBHomePresenter *homePresenter;
+@property(nonatomic) LBSlideMenuRouter *slideMenuRouter;
+@property(nonatomic) LBCusInfoRouter *cusInfoRouter;
 
+
+-(void)setupViewTransitions;
 -(void)showHomeViewController;
 
 @end

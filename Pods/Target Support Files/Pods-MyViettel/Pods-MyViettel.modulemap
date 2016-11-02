@@ -1,0 +1,6 @@
+framework module Pods_MyViettel {
+  umbrella header "Pods-MyViettel-umbrella.h"
+
+  export *
+  module * { export * }
+}

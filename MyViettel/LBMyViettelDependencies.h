@@ -15,4 +15,5 @@
 @property(nonatomic) LBSlideMenuRouter *slideMenuRouter;
 @property(nonatomic) LBHomeRouter *homeRouter;
 
+
 @end
