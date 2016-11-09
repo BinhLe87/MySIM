@@ -55,9 +55,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-MyViettel/FBAllocationTracker.framework'
   install_framework 'Pods-MyViettel/FBMemoryProfiler.framework'
   install_framework 'Pods-MyViettel/FBRetainCycleDetector.framework'
+  install_framework 'Pods-MyViettel/MagicalRecord.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-MyViettel/FBAllocationTracker.framework'
   install_framework 'Pods-MyViettel/FBMemoryProfiler.framework'
   install_framework 'Pods-MyViettel/FBRetainCycleDetector.framework'
+  install_framework 'Pods-MyViettel/MagicalRecord.framework'
 fi

@@ -7,5 +7,6 @@ inhibit_all_warnings!
 
 target 'MyViettel' do
 pod 'FBMemoryProfiler'
+pod "MagicalRecord"
 end
 

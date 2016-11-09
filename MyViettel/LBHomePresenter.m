@@ -32,17 +32,6 @@
 #pragma mark - LBHomePresenterDelegate
 -(void)getCustomerInfo{
     
-    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-       
-        [NSThread sleepForTimeInterval:10];
-        dispatch_semaphore_signal(sem);
-    });
-    
-    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
-    
-    
     customer = [self.homeInteractor getCustomerByPhone:extern_cus_phone];
     
     if (customer) {

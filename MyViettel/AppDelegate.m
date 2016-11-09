@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <MagicalRecord/MagicalRecord.h>
+#import <MagicalRecord.h>
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
 
 @interface AppDelegate ()
