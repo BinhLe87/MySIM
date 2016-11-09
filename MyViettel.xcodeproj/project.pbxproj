@@ -2283,7 +2283,7 @@
 				TargetAttributes = {
 					AB2E79481DB602E40035520E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 58LZ7BPB2J;
+						DevelopmentTeam = RTR7KZGAQ6;
 					};
 				};
 			};
@@ -3049,7 +3049,7 @@
 				INFOPLIST_FILE = MyViettel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = LBComp.MyViettel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.eduapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3072,7 +3072,7 @@
 				INFOPLIST_FILE = MyViettel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = LBComp.MyViettel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.eduapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

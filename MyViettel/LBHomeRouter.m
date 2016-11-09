@@ -63,9 +63,9 @@
 
 
 #pragma mark - LBHomeRouterDelegate
--(void)showCusInfoViewController:(LBCustomer *)customer {
+-(void)showCusInfoViewController:(NSManagedObjectID *)customerObjectID {
     
-    [self.cusInfoRouter showCusInfoViewControllerFromViewController:customer fromViewController:_homeViewController];
+    [self.cusInfoRouter showCusInfoViewControllerFromViewController:customerObjectID fromViewController:_homeViewController];
 }
 
 -(void)presentSlideMenuViewController {

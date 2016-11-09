@@ -27,5 +27,6 @@
 @property(nonatomic) NSMutableArray *items;
 @property(nonatomic, weak) id<LBMenuPopoverViewControllerDelegate> menuPopoverDelegate;
 
+-(instancetype)initWithFrame:(CGRect)frame;
 
 @end

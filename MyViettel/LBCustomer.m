@@ -29,8 +29,6 @@
     
     NSPredicate *filterByAccountType = [NSPredicate predicateWithFormat:@"customer = %@ AND account_type = %@", foundCustomer, accountType];
     
-    
-    
     NSArray *resultsInBkgThread = [LBAccount MR_findAllWithPredicate:filterByAccountType];
     
     //return to main thread
@@ -51,8 +49,6 @@
 -(UIImage *)getBackgroundImg {
     
     UIImage *bkgImg = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:self.backgroundImg];
-    
-    NSLog(@"%@", self.backgroundImg);
     
     if (!bkgImg) { //set default background image
         

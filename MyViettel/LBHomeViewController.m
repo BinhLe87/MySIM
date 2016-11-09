@@ -222,6 +222,8 @@ int const spaceBetweenSections = 20;
     [self.presenterDelegate showCusInfoViewController];
 }
 
+
+
 #pragma mark - TableView
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -313,36 +315,6 @@ int const spaceBetweenSections = 20;
     return size.height;
 }
 
-/*
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    [self.dateTimePopover8 setPermittedArrowDirections:UIPopoverArrowDirectionUnknown];
-    
-    
-    LBSlideMenuViewController *destNav = _slideMenuViewController;
-    _slideMenuViewController.preferredContentSize = CGSizeMake(280,200);
-    destNav.modalPresentationStyle = UIModalPresentationPopover;
-    
-    
-    
-    
-    _dateTimePopover8 = destNav.popoverPresentationController;
-    _dateTimePopover8.delegate = self;
-    _dateTimePopover8.sourceView = self.view;
-    
-    CGRect rectCellInTableView = [self.tableView rectForRowAtIndexPath:indexPath];
-    CGRect rectCellInSuperView = [self.tableView convertRect:rectCellInTableView toView:self.view];
-    
-    CGRect frame = rectCellInSuperView;
-    frame.origin.y = frame.origin.y+20;
-    _dateTimePopover8.sourceRect = frame;
-    //destNav.navigationBarHidden = YES;
-    [self presentViewController:destNav animated:YES completion:nil];
-}
- 
- */
 
 -(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
     

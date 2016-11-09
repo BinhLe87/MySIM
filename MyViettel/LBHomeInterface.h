@@ -31,7 +31,7 @@
 
 @protocol LBHomeRouterDelegate <NSObject>
 
--(void)showCusInfoViewController:(LBCustomer*)customer;
+-(void)showCusInfoViewController:(NSManagedObjectID*)customerObjectID;
 -(void)presentSlideMenuViewController;
 @end
 
