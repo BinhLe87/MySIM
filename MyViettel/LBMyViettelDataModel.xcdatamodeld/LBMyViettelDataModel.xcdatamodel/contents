@@ -44,10 +44,20 @@
         <attribute name="service_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LBService" inverseName="service_details" inverseEntity="LBService" syncable="YES"/>
     </entity>
+    <entity name="LBShop" representedClassName="LBShop" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="closehour" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="openhour" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
     <elements>
         <element name="LBAccount" positionX="-54" positionY="18" width="128" height="150"/>
         <element name="LBCustomer" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="LBService" positionX="-27" positionY="54" width="128" height="105"/>
         <element name="LBServiceDetails" positionX="-9" positionY="63" width="128" height="120"/>
+        <element name="LBShop" positionX="-45" positionY="72" width="128" height="150"/>
     </elements>
 </model>

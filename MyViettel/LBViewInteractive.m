@@ -81,8 +81,6 @@ static int LB_SCREEN_OFFSET = 60;
             
             [self updateInteractiveTransition:percent + 0.3];
             
-            NSLog(@"percent is %f-%f", panTranslation.x, percent);
-            
             self.shouldComplete = percent > Threshold;
             
         }

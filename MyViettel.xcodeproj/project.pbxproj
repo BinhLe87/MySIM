@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2A5E37D211844A866A6FC112 /* Pods_MyViettel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEBECCFCF1067E6D745D0BC /* Pods_MyViettel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AB0362431DD56C7C00440715 /* LBShop+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0362401DD56C7C00440715 /* LBShop+CoreDataProperties.m */; };
+		AB0362441DD56C7C00440715 /* LBShop.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0362421DD56C7C00440715 /* LBShop.m */; };
+		AB03626E1DD5741F00440715 /* LBCusInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03626D1DD5741F00440715 /* LBCusInfoPresenter.m */; };
+		AB0362721DD5743700440715 /* LBCusInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0362711DD5743700440715 /* LBCusInfoRouter.m */; };
+		AB0362771DD5744800440715 /* LBCusInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0362751DD5744800440715 /* LBCusInfoViewController.m */; };
+		AB0362781DD5744800440715 /* LBCusInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0362761DD5744800440715 /* LBCusInfoViewController.xib */; };
 		AB0958761DC32C4200F8F420 /* LBViewInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0958751DC32C4200F8F420 /* LBViewInteractive.m */; };
 		AB0958821DC3485D00F8F420 /* LBBaseAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0958811DC3485D00F8F420 /* LBBaseAnimator.m */; };
 		AB0958861DC349E300F8F420 /* MustOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0958851DC349E300F8F420 /* MustOverride.m */; };
@@ -481,8 +487,6 @@
 		AB5DC4041DC9972200255072 /* LBMenuPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5DC4031DC9972200255072 /* LBMenuPopoverViewController.m */; };
 		AB7CA70D1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA70C1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m */; };
 		AB7CA7181DBF425F00B45D2C /* LBHomeInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CA7171DBF425F00B45D2C /* LBHomeInteractor.m */; };
-		AB8217F41DC82994008CBCFA /* LBCusInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8217F21DC82994008CBCFA /* LBCusInfoViewController.m */; };
-		AB8217F51DC82994008CBCFA /* LBCusInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB8217F31DC82994008CBCFA /* LBCusInfoViewController.xib */; };
 		AB8218001DC82EF6008CBCFA /* ic_next_black.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8217FE1DC82EF6008CBCFA /* ic_next_black.png */; };
 		AB8218011DC82EF6008CBCFA /* ic_next_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8217FF1DC82EF6008CBCFA /* ic_next_black@2x.png */; };
 		AB8218071DC84216008CBCFA /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218021DC84216008CBCFA /* back@2x.png */; };
@@ -490,8 +494,6 @@
 		AB8218091DC84216008CBCFA /* ic_collapse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218041DC84216008CBCFA /* ic_collapse@2x.png */; };
 		AB82180A1DC84216008CBCFA /* ic_see_more.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218051DC84216008CBCFA /* ic_see_more.png */; };
 		AB82180B1DC84216008CBCFA /* ic_see_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8218061DC84216008CBCFA /* ic_see_more@2x.png */; };
-		AB82180E1DC845B3008CBCFA /* LBCusInfoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB82180D1DC845B3008CBCFA /* LBCusInfoRouter.m */; };
-		AB8218111DC84708008CBCFA /* LBCusInfoPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8218101DC84708008CBCFA /* LBCusInfoPresenter.m */; };
 		ABB11D9E1DC7386B0031562F /* LBDataStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB11D9D1DC7386B0031562F /* LBDataStoreManager.m */; };
 		ABB11DA21DC751360031562F /* LBCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB11DA11DC751360031562F /* LBCoreDataManager.m */; };
 		ABE2852B1DB776D9007A412F /* LBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE2852A1DB776D9007A412F /* LBHomeViewController.m */; };
@@ -528,6 +530,18 @@
 /* Begin PBXFileReference section */
 		09C47AE5D59D3B99A35D84CB /* Pods-MyViettel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyViettel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyViettel/Pods-MyViettel.debug.xcconfig"; sourceTree = "<group>"; };
 		0DEBECCFCF1067E6D745D0BC /* Pods_MyViettel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyViettel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB03623F1DD56C7C00440715 /* LBShop+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LBShop+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AB0362401DD56C7C00440715 /* LBShop+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LBShop+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AB0362411DD56C7C00440715 /* LBShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBShop.h; sourceTree = "<group>"; };
+		AB0362421DD56C7C00440715 /* LBShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBShop.m; sourceTree = "<group>"; };
+		AB0362691DD573DD00440715 /* LBCusInfoInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoInterface.h; sourceTree = "<group>"; };
+		AB03626C1DD5741F00440715 /* LBCusInfoPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoPresenter.h; sourceTree = "<group>"; };
+		AB03626D1DD5741F00440715 /* LBCusInfoPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoPresenter.m; sourceTree = "<group>"; };
+		AB0362701DD5743700440715 /* LBCusInfoRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoRouter.h; sourceTree = "<group>"; };
+		AB0362711DD5743700440715 /* LBCusInfoRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoRouter.m; sourceTree = "<group>"; };
+		AB0362741DD5744800440715 /* LBCusInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoViewController.h; sourceTree = "<group>"; };
+		AB0362751DD5744800440715 /* LBCusInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoViewController.m; sourceTree = "<group>"; };
+		AB0362761DD5744800440715 /* LBCusInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBCusInfoViewController.xib; sourceTree = "<group>"; };
 		AB0958741DC32C4200F8F420 /* LBViewInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBViewInteractive.h; sourceTree = "<group>"; };
 		AB0958751DC32C4200F8F420 /* LBViewInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBViewInteractive.m; sourceTree = "<group>"; };
 		AB0958801DC3485D00F8F420 /* LBBaseAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBaseAnimator.h; sourceTree = "<group>"; };
@@ -1083,9 +1097,6 @@
 		AB7D93901DC4446F00BBB100 /* libFBMemoryProfiler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBMemoryProfiler.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MyViettel-fmkjdduugbtxgyfuricihwbuxzjs/Build/Products/Debug-iphonesimulator/libFBMemoryProfiler.a"; sourceTree = "<group>"; };
 		AB7D939A1DC4447200BBB100 /* libFBAllocationTracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBAllocationTracker.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MyViettel-fmkjdduugbtxgyfuricihwbuxzjs/Build/Products/Debug-iphonesimulator/libFBAllocationTracker.a"; sourceTree = "<group>"; };
 		AB7D939C1DC4447500BBB100 /* libFBRetainCycleDetector.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBRetainCycleDetector.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MyViettel-fmkjdduugbtxgyfuricihwbuxzjs/Build/Products/Debug-iphonesimulator/libFBRetainCycleDetector.a"; sourceTree = "<group>"; };
-		AB8217F11DC82994008CBCFA /* LBCusInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoViewController.h; sourceTree = "<group>"; };
-		AB8217F21DC82994008CBCFA /* LBCusInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoViewController.m; sourceTree = "<group>"; };
-		AB8217F31DC82994008CBCFA /* LBCusInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBCusInfoViewController.xib; sourceTree = "<group>"; };
 		AB8217FE1DC82EF6008CBCFA /* ic_next_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_next_black.png; sourceTree = "<group>"; };
 		AB8217FF1DC82EF6008CBCFA /* ic_next_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_next_black@2x.png"; sourceTree = "<group>"; };
 		AB8218021DC84216008CBCFA /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -1093,11 +1104,6 @@
 		AB8218041DC84216008CBCFA /* ic_collapse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_collapse@2x.png"; sourceTree = "<group>"; };
 		AB8218051DC84216008CBCFA /* ic_see_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_see_more.png; sourceTree = "<group>"; };
 		AB8218061DC84216008CBCFA /* ic_see_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_see_more@2x.png"; sourceTree = "<group>"; };
-		AB82180C1DC845B3008CBCFA /* LBCusInfoRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoRouter.h; sourceTree = "<group>"; };
-		AB82180D1DC845B3008CBCFA /* LBCusInfoRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoRouter.m; sourceTree = "<group>"; };
-		AB82180F1DC84708008CBCFA /* LBCusInfoPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoPresenter.h; sourceTree = "<group>"; };
-		AB8218101DC84708008CBCFA /* LBCusInfoPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCusInfoPresenter.m; sourceTree = "<group>"; };
-		AB8218121DC85535008CBCFA /* LBCusInfoInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCusInfoInterface.h; sourceTree = "<group>"; };
 		ABB11D9A1DC72F2D0031562F /* LBCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBCoreDataManager.h; sourceTree = "<group>"; };
 		ABB11D9B1DC72FD30031562F /* LBCoreDataManager+Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBCoreDataManager+Customer.h"; sourceTree = "<group>"; };
 		ABB11D9C1DC7386B0031562F /* LBDataStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDataStoreManager.h; sourceTree = "<group>"; };
@@ -1130,6 +1136,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0362451DD56E1600440715 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		AB0362681DD573CF00440715 /* Module Interface */ = {
+			isa = PBXGroup;
+			children = (
+				AB0362691DD573DD00440715 /* LBCusInfoInterface.h */,
+			);
+			name = "Module Interface";
+			sourceTree = "<group>";
+		};
+		AB03626A1DD5740400440715 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				AB0362731DD5744100440715 /* View */,
+				AB03626F1DD5742E00440715 /* Router */,
+				AB03626B1DD5741600440715 /* Presenter */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		AB03626B1DD5741600440715 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB03626C1DD5741F00440715 /* LBCusInfoPresenter.h */,
+				AB03626D1DD5741F00440715 /* LBCusInfoPresenter.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		AB03626F1DD5742E00440715 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB0362701DD5743700440715 /* LBCusInfoRouter.h */,
+				AB0362711DD5743700440715 /* LBCusInfoRouter.m */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		AB0362731DD5744100440715 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB0362741DD5744800440715 /* LBCusInfoViewController.h */,
+				AB0362751DD5744800440715 /* LBCusInfoViewController.m */,
+				AB0362761DD5744800440715 /* LBCusInfoViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		AB09587F1DC3476000F8F420 /* ViewAnimationTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -1231,6 +1290,7 @@
 		AB2E79641DB6031A0035520E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AB0362451DD56E1600440715 /* Shop */,
 				ABB11D871DC72B340031562F /* CusInfo */,
 				AB2E79781DB6084E0035520E /* SlideMenu */,
 				AB2E79651DB603240035520E /* Home */,
@@ -2017,6 +2077,10 @@
 		AB5967F21DB8AEE700191AB6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				AB03623F1DD56C7C00440715 /* LBShop+CoreDataProperties.h */,
+				AB0362401DD56C7C00440715 /* LBShop+CoreDataProperties.m */,
+				AB0362411DD56C7C00440715 /* LBShop.h */,
+				AB0362421DD56C7C00440715 /* LBShop.m */,
 				AB5967F31DB8AF9500191AB6 /* LBService+CoreDataProperties.h */,
 				AB5967F41DB8AF9500191AB6 /* LBService+CoreDataProperties.m */,
 				AB5967F51DB8AF9500191AB6 /* LBService.h */,
@@ -2049,83 +2113,10 @@
 		ABB11D871DC72B340031562F /* CusInfo */ = {
 			isa = PBXGroup;
 			children = (
-				ABB11D901DC72C5C0031562F /* Application logic */,
-				ABB11D941DC72C5C0031562F /* Module Interface */,
-				ABB11D951DC72C5C0031562F /* User Interface */,
+				AB03626A1DD5740400440715 /* User Interface */,
+				AB0362681DD573CF00440715 /* Module Interface */,
 			);
 			name = CusInfo;
-			sourceTree = "<group>";
-		};
-		ABB11D901DC72C5C0031562F /* Application logic */ = {
-			isa = PBXGroup;
-			children = (
-				ABB11D921DC72C5C0031562F /* Interactor */,
-				ABB11D931DC72C5C0031562F /* Manager */,
-			);
-			name = "Application logic";
-			path = "../../Practices/Xcode Project Structure/Classes/Modules/Home/Application logic";
-			sourceTree = "<group>";
-		};
-		ABB11D921DC72C5C0031562F /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		ABB11D931DC72C5C0031562F /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		ABB11D941DC72C5C0031562F /* Module Interface */ = {
-			isa = PBXGroup;
-			children = (
-				AB8218121DC85535008CBCFA /* LBCusInfoInterface.h */,
-			);
-			name = "Module Interface";
-			path = "../../Practices/Xcode Project Structure/Classes/Modules/Home/Module Interface";
-			sourceTree = "<group>";
-		};
-		ABB11D951DC72C5C0031562F /* User Interface */ = {
-			isa = PBXGroup;
-			children = (
-				ABB11D961DC72C5C0031562F /* Presenter */,
-				ABB11D971DC72C5C0031562F /* Router */,
-				ABB11D981DC72C5C0031562F /* View */,
-			);
-			name = "User Interface";
-			path = "../../Practices/Xcode Project Structure/Classes/Modules/Home/User Interface";
-			sourceTree = "<group>";
-		};
-		ABB11D961DC72C5C0031562F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				AB82180F1DC84708008CBCFA /* LBCusInfoPresenter.h */,
-				AB8218101DC84708008CBCFA /* LBCusInfoPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		ABB11D971DC72C5C0031562F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				AB82180C1DC845B3008CBCFA /* LBCusInfoRouter.h */,
-				AB82180D1DC845B3008CBCFA /* LBCusInfoRouter.m */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		ABB11D981DC72C5C0031562F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AB8217F11DC82994008CBCFA /* LBCusInfoViewController.h */,
-				AB8217F21DC82994008CBCFA /* LBCusInfoViewController.m */,
-				AB8217F31DC82994008CBCFA /* LBCusInfoViewController.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		ABB11D991DC72E150031562F /* CoreData Store */ = {
@@ -2499,6 +2490,7 @@
 				AB2E7C191DB61F770035520E /* locked.png in Resources */,
 				AB2E7C081DB61F770035520E /* lamp.png in Resources */,
 				AB2E7BFF1DB61F770035520E /* id-card-4.png in Resources */,
+				AB0362781DD5744800440715 /* LBCusInfoViewController.xib in Resources */,
 				AB2E7B831DB61F770035520E /* blueprint.png in Resources */,
 				AB2E7C831DB61F770035520E /* shuffle-1.png in Resources */,
 				AB2E7BDA1DB61F770035520E /* folder-4.png in Resources */,
@@ -2522,7 +2514,6 @@
 				AB581B221DB76C7100D546C0 /* leftMenu.jpg in Resources */,
 				AB581A921DB707C300D546C0 /* LBSlideMenuHeaderView.xib in Resources */,
 				AB2E7B8A1DB61F770035520E /* calculator-1.png in Resources */,
-				AB8217F51DC82994008CBCFA /* LBCusInfoViewController.xib in Resources */,
 				AB2E7C7E1DB61F770035520E /* settings-9.png in Resources */,
 				AB2E7C631DB61F770035520E /* push-pin.png in Resources */,
 				AB2E7C891DB61F770035520E /* smartphone-1.png in Resources */,
@@ -2711,6 +2702,7 @@
 			files = (
 				AB59680A1DB8AF9500191AB6 /* LBServiceDetails.m in Sources */,
 				AB581B2D1DB76C7100D546C0 /* SlideNavigationController.m in Sources */,
+				AB0362721DD5743700440715 /* LBCusInfoRouter.m in Sources */,
 				AB581ACE1DB756FA00D546C0 /* SDWebImageDecoder.m in Sources */,
 				AB5968091DB8AF9500191AB6 /* LBServiceDetails+CoreDataProperties.m in Sources */,
 				AB2E79DE1DB618B30035520E /* MASConstraintMaker.m in Sources */,
@@ -2738,7 +2730,6 @@
 				AB0958761DC32C4200F8F420 /* LBViewInteractive.m in Sources */,
 				AB5967EF1DB8AAE300191AB6 /* LBMyViettelDataModel.xcdatamodeld in Sources */,
 				AB581AA71DB72F9200D546C0 /* LBSlideMenuChooseBackgroundTableViewCell.m in Sources */,
-				AB82180E1DC845B3008CBCFA /* LBCusInfoRouter.m in Sources */,
 				AB581AD81DB756FA00D546C0 /* UIImageView+WebCache.m in Sources */,
 				AB5968051DB8AF9500191AB6 /* LBAccount+CoreDataProperties.m in Sources */,
 				AB581AD31DB756FA00D546C0 /* UIButton+WebCache.m in Sources */,
@@ -2749,12 +2740,12 @@
 				AB581AA41DB723FC00D546C0 /* LBSlideMenuChooseBackgroundTableViewController.m in Sources */,
 				ABF667401DBB184500F5353D /* LBHomeTableCellAutoLayout.m in Sources */,
 				AB581B1F1DB76C7100D546C0 /* RightMenuViewController.m in Sources */,
+				AB0362441DD56C7C00440715 /* LBShop.m in Sources */,
 				AB2E79E11DB618B30035520E /* MASViewConstraint.m in Sources */,
 				AB2E7CE51DB61FC50035520E /* LBSlideMenuPresenter.m in Sources */,
 				AB22C3DE1DBA75A500519A98 /* LBHomeHeaderSection.m in Sources */,
 				AB2E7CF11DB62E2C0035520E /* LBSlideMenuRouter.m in Sources */,
 				AB5968081DB8AF9500191AB6 /* LBCustomer.m in Sources */,
-				AB8217F41DC82994008CBCFA /* LBCusInfoViewController.m in Sources */,
 				AB0958861DC349E300F8F420 /* MustOverride.m in Sources */,
 				AB581B2A1DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				AB581B1B1DB76C7100D546C0 /* HomeViewController.m in Sources */,
@@ -2766,6 +2757,8 @@
 				AB5DC4041DC9972200255072 /* LBMenuPopoverViewController.m in Sources */,
 				AB581AD21DB756FA00D546C0 /* SDWebImagePrefetcher.m in Sources */,
 				AB7CA7181DBF425F00B45D2C /* LBHomeInteractor.m in Sources */,
+				AB0362431DD56C7C00440715 /* LBShop+CoreDataProperties.m in Sources */,
+				AB03626E1DD5741F00440715 /* LBCusInfoPresenter.m in Sources */,
 				AB581AD61DB756FA00D546C0 /* UIImage+WebP.m in Sources */,
 				AB0958821DC3485D00F8F420 /* LBBaseAnimator.m in Sources */,
 				AB581AD11DB756FA00D546C0 /* SDWebImageManager.m in Sources */,
@@ -2774,7 +2767,6 @@
 				ABE2852E1DB7783C007A412F /* LBHomeHeaderView.m in Sources */,
 				AB7CA70D1DBF3ABC00B45D2C /* LBCoreDataManager+Customer.m in Sources */,
 				AB2E794E1DB602E40035520E /* main.m in Sources */,
-				AB8218111DC84708008CBCFA /* LBCusInfoPresenter.m in Sources */,
 				AB2E798B1DB611490035520E /* LBSideMenuTableViewCell.m in Sources */,
 				AB5967EC1DB8A9F900191AB6 /* LBHomePresenter.m in Sources */,
 				AB581B291DB76C7100D546C0 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
@@ -2783,6 +2775,7 @@
 				ABEFD33E1DC08BAD00D94BF9 /* LBCenterBarItemView.m in Sources */,
 				AB2E7CEB1DB6292C0035520E /* LBRootRouter.m in Sources */,
 				AB581AD91DB756FA00D546C0 /* UIView+WebCacheOperation.m in Sources */,
+				AB0362771DD5744800440715 /* LBCusInfoViewController.m in Sources */,
 				AB581B1D1DB76C7100D546C0 /* ProfileDetailViewController.m in Sources */,
 				AB1CA0B71DC1ABA400D33F49 /* LBMyViettelConstants.m in Sources */,
 				AB0958891DC34BEE00F8F420 /* LBSlideLeftAnimator.m in Sources */,

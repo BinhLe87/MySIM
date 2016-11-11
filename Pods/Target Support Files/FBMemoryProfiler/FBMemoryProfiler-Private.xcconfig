@@ -1,6 +1,6 @@
 #include "FBMemoryProfiler.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/FBMemoryProfiler" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FBAllocationTracker" "${PODS_ROOT}/Headers/Public/FBMemoryProfiler" "${PODS_ROOT}/Headers/Public/FBRetainCycleDetector" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/MagicalRecord/MagicalRecord"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/FBMemoryProfiler" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FBAllocationTracker" "${PODS_ROOT}/Headers/Public/FBMemoryProfiler" "${PODS_ROOT}/Headers/Public/FBRetainCycleDetector" "${PODS_ROOT}/Headers/Public/GoogleMaps" "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMaps" "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMapsBase" "${PODS_ROOT}/Headers/Public/GoogleMaps/GoogleMapsCore" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/MagicalRecord/MagicalRecord"
 OTHER_LDFLAGS = ${FBMEMORYPROFILER_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES

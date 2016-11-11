@@ -39,14 +39,33 @@
     // Store memory profiler somewhere to extend it's lifetime
     internalMemoryProfiler = memoryProfiler;*/
     
-    //Core data
+    //TODO: Config Core data
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"LBMyViettelDataModel"];
     
+    //TODO: Register Push notification
+    /*if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+    {
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    }
+    else
+    {
+        // iOS < 8 Notifications
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+    }*/
     
+    //TODO: show HomeViewController
     [self.myViettelDependencies.homeRouter showHomeViewController];
     
     return YES;
 }
+
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -69,5 +88,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - Push notification handlers
+/*-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSString *deviceTokenString = [deviceToken description];
+    
+    NSLog(@"device Token: %@", deviceTokenString);
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+    NSLog(@"Failed to register remote notification: %@", [error localizedDescription]);
+}*/
 
 @end
