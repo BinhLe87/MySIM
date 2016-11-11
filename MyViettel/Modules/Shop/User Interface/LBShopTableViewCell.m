@@ -40,12 +40,6 @@ static CGFloat paddingBetweenShopNameLblAndDistanceLbl = 15;
     
     CGFloat shopDistanceLblWidth = CGRectGetWidth(self.shopDistanceLbl.frame);
     
-    /*if (isLandscape) {
-        
-        shopDistanceLblWidth *= 2;
-    }*/
-    
-    
     CGFloat distanceIconWidth = CGRectGetWidth(self.distanceIcon.frame);
     
     self.shopDistanceLbl.preferredMaxLayoutWidth = shopDistanceLblWidth;

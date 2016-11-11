@@ -12,7 +12,7 @@
 
 -(NSArray *)getShopList {
     
-   return [_shopListDataManagerDelegate getShopList];
+   return [_shopListDataManagerDelegate getShopList]; 
 }
 
 @end
