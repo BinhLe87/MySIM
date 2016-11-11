@@ -16,6 +16,7 @@
                 <outlet property="headerView" destination="1xI-QG-tua" id="nRv-HY-agU"/>
                 <outlet property="rootView" destination="i5M-Pr-FkT" id="D43-P7-JVI"/>
                 <outlet property="selectedJobLbl" destination="VIK-hV-cXN" id="eVv-ZR-uXR"/>
+                <outlet property="shopAddressCell" destination="fpb-SP-HTa" id="EYX-Gn-mhh"/>
                 <outlet property="showJobMenuIcon" destination="77F-51-OBV" id="UXk-yI-uWL"/>
                 <outlet property="updateButton" destination="fhe-CS-NOu" id="RcA-mh-eM1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

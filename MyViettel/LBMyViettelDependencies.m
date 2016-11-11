@@ -21,7 +21,10 @@
 //CusInfo
 #import "LBCusInfoRouter.h"
 #import "LBCusInfoPresenter.h"
-
+//Shop
+#import "LBShopListRouter.h"
+#import "LBShopListPresenter.h"
+#import "LBShopInteractor.h"
 
 
 
@@ -78,6 +81,17 @@
     
     
     _homeRouter.cusInfoRouter = cusInfoRouter;
+    
+    //TODO: ShopList - add dependencies
+    LBShopListRouter *shopListRouter = [[LBShopListRouter alloc] init];
+    LBShopListPresenter *shopListPresenter = [[LBShopListPresenter alloc] init];
+    LBShopInteractor *shopInteractor = [[LBShopInteractor alloc] init];
+    
+    shopListPresenter.shopInteractor = shopInteractor;
+    shopListRouter.shopListPresenter = shopListPresenter;
+    shopInteractor.shopListDataManagerDelegate = dataStoreManager;
+    
+    cusInfoRouter.shopListRouter = shopListRouter;
 }
 
 @end

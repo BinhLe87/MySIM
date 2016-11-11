@@ -79,6 +79,7 @@ static int LB_SCREEN_OFFSET = 60;
             percent = fmaxf(percent, 0.f);
             percent = fminf(percent, 1.f);
             
+            
             [self updateInteractiveTransition:percent + 0.3];
             
             self.shouldComplete = percent > Threshold;

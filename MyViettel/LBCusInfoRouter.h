@@ -11,14 +11,19 @@
 #import "LBCusInfoViewController.h"
 #import "LBCusInfoPresenter.h"
 #import "LBCustomer.h"
+#import "LBShopListRouter.h"
 
 @interface LBCusInfoRouter : NSObject
 
 @property(nonatomic)LBRootRouter *rootRouter;
 @property(nonatomic)LBCusInfoPresenter *cusInfoPresenter;
+@property(nonatomic)LBShopListRouter *shopListRouter;
 
 
 -(void)showCusInfoViewControllerFromViewController:(NSManagedObjectID *)customerObjectID fromViewController:(UIViewController*)fromVC;
 
 -(void)dismissCusInfoViewController;
+
+-(void)showShopListViewController;
+
 @end

@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "LBHomeInterface.h"
+#import "LBShopListInterface.h"
 
 @class LBCustomer;
-@interface LBDataStoreManager : NSObject  <LBHomeDataManagerDelegate>
+@interface LBDataStoreManager : NSObject  <LBHomeDataManagerDelegate, LBShopListDataManagerDelegate>
 
 
 @end

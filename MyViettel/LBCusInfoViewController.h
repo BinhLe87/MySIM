@@ -33,6 +33,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
 
+@property (weak, nonatomic) IBOutlet UIView *shopAddressCell;
+
 
 
 @property(nonatomic, weak) id <LBCusInfoPresenterDelegate> cusInfoPresenterDelegate;

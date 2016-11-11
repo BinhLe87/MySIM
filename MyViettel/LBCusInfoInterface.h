@@ -23,6 +23,7 @@
 -(void)dismissCusInfoViewController;
 -(void)getJobMenuItems;
 -(void)updateCustomer:(void(^)(LBCustomer *updatedCustomer))updateNewValueBlock;
+-(void)showShopListViewController;
 
 @end
 

@@ -82,25 +82,11 @@
             }
         }
     }];
-    
-    
-    
-    
-    /*[MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-        
-        LBCustomer *newCus =  [LBCustomer MR_createEntityInContext:localContext];
-        [newCus setAvatar_link:@"http://data.kenhsinhvien.net/hinhanh/2013/01/21/trao-luu-avatar-nghieng-dau-tran-ngap-facebook-700488-1568.jpg"];
-        [newCus setName:@"Phương Thu Lê"];
-        [newCus setPackage_name:@"TOMATO"];
-        [newCus setPhone:@"0977073999"];
-        
-        
-    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
-        
-        if (error) {
-            
-            NSLog(@"Loi insert CoreData: %@", [error localizedDescription]);
-        }
-    }];*/
 }
+
+-(void)showShopListViewController {
+    
+    [self.cusInfoRouter showShopListViewController];
+}
+
 @end

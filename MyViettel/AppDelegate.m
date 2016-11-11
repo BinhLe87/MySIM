@@ -43,7 +43,7 @@
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"LBMyViettelDataModel"];
     
     //TODO: Register Push notification
-    /*if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+    if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
     {
         // iOS 8 Notifications
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -54,7 +54,7 @@
     {
         // iOS < 8 Notifications
         [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
-    }*/
+    }
     
     //TODO: show HomeViewController
     [self.myViettelDependencies.homeRouter showHomeViewController];
@@ -90,7 +90,7 @@
 }
 
 #pragma mark - Push notification handlers
-/*-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     NSString *deviceTokenString = [deviceToken description];
     
@@ -100,6 +100,6 @@
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     
     NSLog(@"Failed to register remote notification: %@", [error localizedDescription]);
-}*/
+}
 
 @end

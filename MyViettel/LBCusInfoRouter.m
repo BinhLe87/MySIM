@@ -59,6 +59,9 @@
 
 }
 
-
+-(void)showShopListViewController {
+    
+    [self.shopListRouter showShopListViewController:_cusInfoViewController];
+}
 
 @end

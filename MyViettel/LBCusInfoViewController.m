@@ -194,6 +194,14 @@
         
         [_emailTextField becomeFirstResponder];
     }
+    
+    //TODO:show ShopListViewController
+    CGRect shopCellInXIBViewRect = [_shopAddressCell convertRect:_shopAddressCell.bounds toView:viewInXIB];
+    
+    if(CGRectContainsPoint(shopCellInXIBViewRect, tapPointInXIBView)) {
+        
+        [self.cusInfoPresenterDelegate showShopListViewController];
+    }
 }
 
 - (IBAction)touchUpdateButton:(id)sender {
