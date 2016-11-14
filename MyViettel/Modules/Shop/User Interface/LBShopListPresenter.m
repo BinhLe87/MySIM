@@ -7,7 +7,7 @@
 //
 
 #import "LBShopListPresenter.h"
-#import "LBShopListRouter.h"
+
 
 @implementation LBShopListPresenter {
     
@@ -30,6 +30,11 @@
     shopList = [self.shopInteractor getShopList];
     
     [_shopListVCDelegate gotShopList:shopList];
+}
+
+-(void)didSelectShop:(LBShop *)selectedShop {
+    
+    [self.shopListRouter showShopMapViewControllerWithShop:selectedShop];
 }
 
 @end

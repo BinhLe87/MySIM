@@ -9,5 +9,6 @@ target 'MyViettel' do
 pod 'FBMemoryProfiler'
 pod "MagicalRecord"
 pod 'GoogleMaps'
+pod 'GooglePlaces'
 end
 

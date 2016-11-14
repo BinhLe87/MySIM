@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "LBShopListPresenter.h"
+#import "LBShop.h"
+
+@class LBShopListPresenter;
 
 @interface LBShopListRouter : NSObject
 
@@ -16,6 +18,6 @@
 @property(nonatomic)LBShopListPresenter *shopListPresenter;
 
 -(void)showShopListViewController:(UIViewController*)fromViewController;
-
+-(void)showShopMapViewControllerWithShop:(LBShop*)shop;
 
 @end

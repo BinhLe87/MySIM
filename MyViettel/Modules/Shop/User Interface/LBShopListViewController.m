@@ -89,6 +89,15 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [_tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    [self.shopListPresenterDelegate didSelectShop:[_shopArray objectAtIndex:indexPath.row]];
+    
+    
+}
+
 #pragma mark - LBShopListViewControllerDelegate
 -(void)gotShopList:(NSArray *)shopList {
     

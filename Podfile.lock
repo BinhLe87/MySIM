@@ -9,6 +9,8 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
+  - GooglePlaces (2.1.1):
+    - GoogleMaps/Base (= 2.1.1)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -16,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - FBMemoryProfiler
   - GoogleMaps
+  - GooglePlaces
   - MagicalRecord
 
 SPEC CHECKSUMS:
@@ -23,6 +26,9 @@ SPEC CHECKSUMS:
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
 
-COCOAPODS: 0.38.0
+PODFILE CHECKSUM: 9254ac4ffaf12107af21ce1dfffecdf6f5128ff2
+
+COCOAPODS: 1.1.1

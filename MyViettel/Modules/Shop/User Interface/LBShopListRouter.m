@@ -7,11 +7,14 @@
 //
 
 #import "LBShopListRouter.h"
+#import "LBShopListPresenter.h"
 #import "LBShopListViewController.h"
+#import "LBShopMapViewController.h"
 
 @interface LBShopListRouter()
 
 @property(nonatomic) LBShopListViewController *shopListVC;
+@property(nonatomic) LBShopMapViewController *shopMapVC;
 
 @end
 
@@ -22,6 +25,7 @@
     if (!(self = [super init])) return nil;
     
     _shopListVC = [[LBShopListViewController alloc] init];
+    _shopMapVC = [[LBShopMapViewController alloc] init];
     
     return self;
 }
@@ -44,6 +48,13 @@
         
         [fromViewController presentViewController:_shopListVC animated:YES completion:nil];
     }
+}
+
+
+-(void)showShopMapViewControllerWithShop:(LBShop *)shop {
+
+    _shopMapVC.shop = shop;
+    [_shopListVC.navigationController pushViewController:_shopMapVC animated:YES];
 }
 
 

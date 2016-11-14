@@ -6,11 +6,12 @@
 //  Copyright © 2016 LBComp. All rights reserved.
 //
 
+#import "LBShop.h"
 
 @protocol LBShopListPresenterDelegate <NSObject>
 
 -(void)getShopList;
-
+-(void)didSelectShop:(LBShop*)selectedShop;
 @end
 
 
@@ -24,6 +25,7 @@
 @protocol LBShopListDataManagerDelegate <NSObject>
 
 -(NSArray*)getShopList;
+
 
 @end
 

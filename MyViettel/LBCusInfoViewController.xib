@@ -63,7 +63,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpb-SP-HTa" userLabel="ShopAddressCell">
                     <rect key="frame" x="0.0" y="202.5" width="320" height="70"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="uJ7-vl-8sn" userLabel="ShopIcon">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_shop.png" translatesAutoresizingMaskIntoConstraints="NO" id="uJ7-vl-8sn" userLabel="ShopIcon">
                             <rect key="frame" x="10" y="25" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="mts-sI-Lxq"/>
@@ -257,8 +257,8 @@
         </view>
     </objects>
     <resources>
-        <image name="home-2.png" width="512" height="512"/>
         <image name="ic_next_black.png" width="20" height="20"/>
         <image name="ic_see_more.png" width="16" height="10"/>
+        <image name="ic_shop.png" width="40" height="40"/>
     </resources>
 </document>

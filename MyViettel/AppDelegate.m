@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import <MagicalRecord.h>
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
+#import <GooglePlaces/GooglePlaces.h>
+
+@import GoogleMaps;
+
 
 @interface AppDelegate ()
 
@@ -17,6 +21,7 @@
 @implementation AppDelegate {
     
     FBMemoryProfiler *internalMemoryProfiler;
+    int counter;
 }
 
 #pragma mark - Initializers
@@ -42,6 +47,10 @@
     //TODO: Config Core data
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"LBMyViettelDataModel"];
     
+    //TODO: Google maps
+    [GMSServices provideAPIKey:@"AIzaSyDqJ7_AmiYAulA62y9DhNhmvHZxZKWlQUg"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyDqJ7_AmiYAulA62y9DhNhmvHZxZKWlQUg"];
+    
     //TODO: Register Push notification
     if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
     {
@@ -55,6 +64,51 @@
         // iOS < 8 Notifications
         [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
     }
+    counter = 0;
+    UIMutableUserNotificationAction *increaseAction= [[UIMutableUserNotificationAction alloc] init];
+    increaseAction.identifier = @"INCREMENT_ACTION";
+    increaseAction.title= @"Add + 1";
+    increaseAction.activationMode = UIUserNotificationActivationModeBackground;
+    increaseAction.authenticationRequired = true;
+    increaseAction.destructive = false;
+    
+    UIMutableUserNotificationAction *decreaseAction= [[UIMutableUserNotificationAction alloc] init];
+    decreaseAction.identifier = @"DECREMENT_ACTION";
+    decreaseAction.title= @"Sub - 1";
+    decreaseAction.activationMode = UIUserNotificationActivationModeBackground;
+    decreaseAction.authenticationRequired = true;
+    decreaseAction.destructive = false;
+    
+    UIMutableUserNotificationAction *resetAction= [[UIMutableUserNotificationAction alloc] init];
+    resetAction.identifier = @"RESET_ACTION";
+    resetAction.title= @"Reset";
+    resetAction.activationMode = UIUserNotificationActivationModeForeground;
+    resetAction.authenticationRequired = true;
+    resetAction.destructive = true;
+    
+    // 2. Create the category ***********************************************
+    
+    // Category
+    UIMutableUserNotificationCategory *counterCategory = [[UIMutableUserNotificationCategory alloc] init];
+    counterCategory.identifier = @"COUNTER_CATEGORY";
+    
+    // A. Set actions for the default context
+    [counterCategory setActions:@[increaseAction, decreaseAction, resetAction]
+                     forContext: UIUserNotificationActionContextDefault];
+    
+    // B. Set actions for the minimal context
+    [counterCategory setActions:@[increaseAction, decreaseAction]
+                     forContext: UIUserNotificationActionContextMinimal];
+    
+    NSSet *categories = [NSSet setWithObjects:counterCategory, nil];
+    // 3. Notification Registration *****************************************
+    
+    UIUserNotificationType notificationType = UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:notificationType categories:categories];
+    
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    
     
     //TODO: show HomeViewController
     [self.myViettelDependencies.homeRouter showHomeViewController];
@@ -100,6 +154,46 @@
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     
     NSLog(@"Failed to register remote notification: %@", [error localizedDescription]);
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    NSString *alertMessage = [userInfo objectForKey:@"message"];
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = nil;
+    localNotification.alertBody = alertMessage;
+    localNotification.alertAction = [userInfo objectForKey:@"action"];
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] +1;
+    localNotification.category = @"COUNTER_CATEGORY";
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
+    
+    
+    // Handle notification action *****************************************
+    if ([notification.category isEqualToString:@"COUNTER_CATEGORY"]) {
+        
+        if ([identifier isEqualToString:@"INCREMENT_ACTION"]) {
+            
+            counter++;
+        } else if ([identifier isEqualToString:@"DECREMENT_ACTION"]) {
+            
+            counter--;
+        } else if ([identifier isEqualToString:@"RESET_ACTION"]) {
+            
+            counter =0;
+        }
+    }
+    
+    NSLog(@"counter = %d", counter);
+    
+    if (completionHandler) {
+        
+        completionHandler();
+    }
 }
 
 @end

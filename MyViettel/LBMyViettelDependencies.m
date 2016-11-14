@@ -88,6 +88,7 @@
     LBShopInteractor *shopInteractor = [[LBShopInteractor alloc] init];
     
     shopListPresenter.shopInteractor = shopInteractor;
+    shopListPresenter.shopListRouter = shopListRouter;
     shopListRouter.shopListPresenter = shopListPresenter;
     shopInteractor.shopListDataManagerDelegate = dataStoreManager;
     

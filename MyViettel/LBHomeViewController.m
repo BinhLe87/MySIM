@@ -81,6 +81,7 @@ int const spaceBetweenSections = 20;
     [_tableView setShowsVerticalScrollIndicator:NO];
     [_tableView setShowsHorizontalScrollIndicator:NO];
     _tableView.backgroundColor = UIColorFromRGB(tableViewBackgroundColor);
+    _tableView.bounces = NO;
     
     //add headerView
     LBHomeHeaderView *headerView = [LBHomeHeaderView header];
